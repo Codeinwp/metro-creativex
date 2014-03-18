@@ -1,10 +1,10 @@
 /*
-	Theme Name: Metro CreativeX 
+	Theme Name: Metro CreativeX 	Theme URI: themeisle.com
 	Description: Metro CreativeX is a free creative WordPress theme, super clean and fully responsive design. Coded with care in HTML5 &amp; CSS3, is easy to customize and well documented.
-	Author: Codeinwp
-	Author URI: www.codeinwp.com
+	Author: themeisle.com
+	Author URI: themeisle.com
 	Version: 1.0.1
-	Tags: gray, light, white, two-columns, right-sidebar,black,responsive-layout, fluid-layout, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready
+	Tags: gray, dark, white, black, purple, red, green, yellow, blue, two-columns,responsive-layout, fluid-layout, custom-menu, custom-header, custom-background, editor-style, featured-images, threaded-comments, translation-ready, post-formats
 	License: GNU General Public License		License URI: license.txt	    WWBW is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 */
 
@@ -160,7 +160,7 @@ header nav a .read span, #searchform .searchbutton:hover {
 	width: 29%;
 	float: left;
 	margin: 0 4% 4% 0;
-	overflow: hidden;
+	-ms-word-wrap: break-word;		word-wrap: break-word;
 	padding: 2rem 0 0 0;
 }
 
@@ -774,7 +774,7 @@ a img.aligncenter {
 	height: auto !important;
 }
 
-#comments .comment .comm_content {
+#comments .comment .comm_content {	font-size: 15px;
 	width: 70%;
 	height: auto;
 	float: left;

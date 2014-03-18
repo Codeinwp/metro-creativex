@@ -1,1 +1,1 @@
-		<div class="clearfix"></div>		<footer>			All rights reserved.  &#169; <?php the_time('Y'); ?> - <?php echo date("Y"); ?> - <?php bloginfo('name'); ?>		</footer>	<?php wp_footer(); ?>	</body></html>
+		<div class="clearfix"></div>		<footer>			<?php _e('All rights reserved.','cwp'); ?>  &#169; <?php echo get_the_date("Y"); ?> - <?php echo date("Y"); ?> - <?php bloginfo('name'); ?>		</footer>	<?php wp_footer(); ?>	</body></html>
