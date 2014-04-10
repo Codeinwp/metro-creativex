@@ -15,6 +15,7 @@ function cwp_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
+	$wp_customize->remove_section( 'background_image' );
 	$wp_customize->remove_control('header_textcolor');
 
 	$wp_customize->add_section( 'codeinwp_logo_section' , array(
@@ -54,3 +55,11 @@ function cwp_customize_register( $wp_customize ) {
 
 }
 add_action( 'customize_register', 'cwp_customize_register' );
+
+/**
+ * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
+ */
+function cwp_customize_preview_js() {
+	wp_enqueue_script( 'customizerJS', get_template_directory_uri() . '/js/customizer.js', array( 'jquery' ), '20131205', true );
+}
+add_action( 'customize_preview_init', 'cwp_customize_preview_js' );
