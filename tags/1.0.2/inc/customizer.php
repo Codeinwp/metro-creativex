@@ -17,25 +17,7 @@ function cwp_customize_register( $wp_customize ) {
 	
 	$wp_customize->remove_section( 'background_image' );
 	$wp_customize->remove_control('header_textcolor');
-	
-	/* theme notes */
-	$wp_customize->add_section( 'codeinwp_theme_notes' , array(
-		'title'      => __('ThemeIsle theme notes','codeinwp'),
-		'description' => sprintf( __( "Thank you for being part of this! We've spent almost 6 months building ThemeIsle without really knowing if anyone will ever use a theme or not, so we're very grateful that you've decided to work with us. Wanna <a href='http://themeisle.com/contact/' target='_blank'>say hi</a>?
-		<br/><br/><a href='http://themeisle.com/demo/?theme=MetroX' target='_blank' />View Theme Demo</a> | <a href='http://themeisle.com/forums/forum/metrox/' target='_blank'>Get theme support</a>")),
-		'priority'   => 30,
-	));
-	$wp_customize->add_setting(
-        'cwp_theme_notice'
-	);
-	
-	$wp_customize->add_control(
-    'cwp_theme_notice',
-    array(
-        'section' => 'codeinwp_theme_notes',
-		'type'  => 'read-only',
-    ));
-	
+
 	$wp_customize->add_section( 'codeinwp_logo_section' , array(
     	'title'       => __( 'Logo', 'cwp' ),
     	'priority'    => 30,
