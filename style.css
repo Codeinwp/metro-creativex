@@ -1,10 +1,10 @@
 /*
 	Theme Name: Metro CreativeX
-	Theme URI: themeisle.com
+	Theme URI: http://themeisle.com/themes/metrox/
 	Description: Metro CreativeX is a free creative WordPress theme, super clean and fully responsive design. Coded with care in HTML5 &amp; CSS3, is easy to customize and well documented.
 	Author: codeinwp
 	Author URI: Codeinwp.com
-	Version: 1.0.3 
+	Version: 1.0.5
 	Tags: gray, dark, white, black, purple, red, green, yellow, blue, two-columns,responsive-layout, fluid-layout, custom-menu, custom-header, custom-background, editor-style, featured-images, threaded-comments, translation-ready, post-formats
 	License: GNU General Public License v3.0
 	
@@ -418,31 +418,31 @@ footer {
 .post p {
 	margin-bottom: 1.5rem;
 }
-.post h1 {font-size: 2.8rem;}
-.post h2 {font-size: 2.2rem;}
-.post h3 {font-size: 2rem;}
-.post h4 {font-size: 1.6rem;}
-.post h5 {font-size: 1.4rem;}
-.post h6 {font-size: 1.2rem;}
-.post table { 
+.post h1, .comm_content h1 {font-size: 2.8rem;}
+.post h2, .comm_content h2 {font-size: 2.2rem;}
+.post h3, .comm_content h3 {font-size: 2rem;}
+.post h4, .comm_content h4 {font-size: 1.6rem;}
+.post h5, .comm_content h5 {font-size: 1.4rem;}
+.post h6, .comm_content h6 {font-size: 1.2rem;}
+.post table, .comm_content table { 
 	border: 1px solid #555;
 	margin: 1.5rem 0;
 }
-.post td {
+.post td, .comm_content td {
 	border-top: 1px solid #555;
 	padding: 0.5rem;
 }
-.post ul, 
-.post li, 
-.post ol,
-.post dl,
-.post dd { 
+.post ul, .comm_content ul, 
+.post li, .comm_content li,
+.post ol, .comm_content ol,
+.post dl, .comm_content dl,
+.post dd, .comm_content dd { 
 	margin-left: 1.4rem;
 }
-.post strong {
+.post strong, .comm_content strong {
 	color: #fff;
 }
-.post blockquote {
+.post blockquote, .comm_content blockquote {
 	width: 96%;
 	padding: 2%;
 	background: #333;
@@ -451,16 +451,46 @@ footer {
 	border-top-left-radius: 0;
 	font-style: italic;
 }
-.post blockquote p { 
+.post blockquote p, .comm_content blockquote p { 
 	margin-bottom: 0px !important; 
 }
-.post cite {
+.post cite , .comm_content cite{
 	font-size: 1.2rem;
 	color: #999;
+	font-style: normal;
+	display: block;
 }
-.post cite:before {
+.post cite:before, .comm_content cite:before {
 	content: "\A";
     white-space: pre;
+}
+
+.post code, .comm_content code {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background: #f2f2f2;
+	border: 1px solid #e6e6e6;
+	color: #888;
+	padding: 2px 4px;
+}
+.post pre, .comm_content pre {
+	white-space: pre;
+	word-wrap: normal;
+	overflow-x: scroll;
+	line-height: 1.3;
+	margin: 1em 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background: #f2f2f2;
+	border: 1px solid #e6e6e6;
+	color: #888;
+	padding: 2px 4px;
 }
 
 /* =WordPress Core
