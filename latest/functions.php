@@ -2,21 +2,28 @@
 /**
  * Set content width
  */
-if ( ! isset( $content_width ) ) $content_width = 600;
-function cwp_setup() {
 
-	load_theme_textdomain( 'cwp', get_template_directory() . '/languages' );
+function metrox_setup() {
+
+	if ( ! isset( $content_width ) ) 
+		$content_width = 600;
+
+	load_theme_textdomain( 'metrox', get_template_directory() . '/languages' );
+	
 	/*
 	* Register menus
 	*/
 	register_nav_menus(
 		array(
-			'secound' => __( 'Header menu', 'cwp')
+			'secound' => __( 'Header menu', 'metrox')
 		)
 	);
-	// Add theme support for Featured Images
+	
+	/* Add theme support for Featured Images */
+	
 	add_theme_support( 'post-thumbnails' );	
 	add_theme_support( 'automatic-feed-links' );
+	
     /**
      * Enable support for Post Formats
      */
@@ -48,11 +55,12 @@ function cwp_setup() {
 	) );
 
 }		
-add_action( 'after_setup_theme', 'cwp_setup' ); 
+add_action( 'after_setup_theme', 'metrox_setup' ); 
+
 /**
  * Returns the URL from the post.
  */
-function cwp_link_post_format() {
+function metrox_link_post_format() {
 	$content = get_the_content();
 	$has_url = get_url_in_content( $content );
 	return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
@@ -60,34 +68,36 @@ function cwp_link_post_format() {
 /**
  * Enqueue scripts and styles
  */
-function cwp_theme_scripts() {	
+function metrox_theme_scripts() {	
+
     $blog_url = home_url();
 	
-	wp_enqueue_style( 'cwp_theme-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'metrox_theme_style', get_stylesheet_uri() );
 	
-	wp_register_style( 'cwp_opensans-font', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
-	wp_enqueue_style( 'cwp_opensans-font' );
-	wp_register_style( 'cwp_sourcesans-font', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic');
-	wp_enqueue_style( 'cwp_sourcesans-font' );		
+	wp_register_style( 'metrox_opensans_font', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
+	wp_enqueue_style( 'metrox_opensans_font' );
+	
+	wp_register_style( 'metrox_sourcesans_font', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic');
+	wp_enqueue_style( 'metrox_sourcesans_font' );		
     
 	wp_enqueue_script('jquery');
 	
-    wp_enqueue_script( 'cwp_jscript', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'metrox_jscript', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0', true );
 	
-    wp_enqueue_script( 'cwp_carouFredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.1.0.js', array('jquery'), '6.1', true );
+    wp_enqueue_script( 'metrox_carouFredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.1.0.js', array('jquery'), '6.1', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	if ( !is_single() and !is_page() ) {
-        wp_enqueue_script( 'cwp_jmasonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery'), '3.6.0', true );
+        wp_enqueue_script( 'metrox_jmasonry', get_template_directory_uri() . '/js/masonry.pkgd.js', array('jquery'), '3.6.0', true );
     }
       
-}add_action( 'wp_enqueue_scripts', 'cwp_theme_scripts' );
+}add_action( 'wp_enqueue_scripts', 'metrox_theme_scripts' );
 /**
  * No title
  */
-add_filter( 'the_title', 'cwp_default_title' ); 
-function cwp_default_title( $title ) {
+add_filter( 'the_title', 'metrox_default_title' ); 
+function metrox_default_title( $title ) {
 	if($title == '')
 		$title = "Default title";
 	return $title;
@@ -99,7 +109,7 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 /**
  * Displays navigation to next/previous set of posts when applicable.
  */
-function cwp_pagination() {
+function metrox_pagination() {
 	global $wp_query;
 	// Don't print empty markup if there's only one page.
 	if ( $wp_query->max_num_pages < 2 )
@@ -119,18 +129,17 @@ function cwp_pagination() {
  * Template for comments and pingbacks.
  *
  * To override this walker in a child theme without modifying the comments template
- * simply create your own cwp_comment(), and that function will be used instead.
+ * simply create your own metrox_comment(), and that function will be used instead.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
- * @since cwp 1.0
  */
  
  
 require get_template_directory() . '/inc/customizer.php';
 
 
-function cwp_comment( $comment, $args, $depth ) {
+function metrox_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -138,7 +147,7 @@ function cwp_comment( $comment, $args, $depth ) {
 		// Display trackbacks differently than normal comments.
 	?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'cwp' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'cwp' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'metrox' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'metrox' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -152,22 +161,22 @@ function cwp_comment( $comment, $args, $depth ) {
 					printf( '<cite class="fn">%1$s %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
-						( $comment->user_id === $post->post_author ) ? '<span> ' . __( '', 'cwp' ) . '</span>' : ''
+						( $comment->user_id === $post->post_author ) ? '<span> ' . __( '', 'metrox' ) . '</span>' : ''
 					);
 					printf( '<b><a href="%1$s"><time datetime="%2$s">%3$s</time></a></b>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'cwp' ), get_comment_date(), get_comment_time() )
+						sprintf( __( '%1$s at %2$s', 'metrox' ), get_comment_date(), get_comment_time() )
 					);
 				?></span>
 				<?php comment_text(); ?>
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'cwp' ); ?></p>
+					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'metrox' ); ?></p>
 				<?php endif; ?>
-				<?php edit_comment_link( __( 'Edit', 'cwp' ), '<p class="edit-link">', '</p>' ); ?>
+				<?php edit_comment_link( __( 'Edit', 'metrox' ), '<p class="edit-link">', '</p>' ); ?>
 				<div class="reply">
-					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'cwp' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => 20 ) ) ); ?>
+					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'metrox' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => 20 ) ) ); ?>
 				</div><!-- .reply -->
 			</div><!--/comm_content-->
 			
@@ -177,15 +186,15 @@ function cwp_comment( $comment, $args, $depth ) {
 	endswitch; // end comment_type check
 }
 
-function cwp_add_editor_styles() {
+function metrox_add_editor_styles() {
     add_editor_style( '/css/custom-editor-style.css' );
 }
-add_action( 'init', 'cwp_add_editor_styles' );
+add_action( 'init', 'metrox_add_editor_styles' );
 
 
-add_filter( 'post_class', 'cwp_post_class' );
+add_filter( 'post_class', 'metrox_post_class' );
  
- function cwp_post_class( $classes ){
+function metrox_post_class( $classes ){
 	global $post;
 	
 	if(is_single($post->ID)):
@@ -209,7 +218,7 @@ add_filter( 'post_class', 'cwp_post_class' );
  
  }
  
-function cwp_excerpt_max_charlength($charlength) {
+function metrox_excerpt_max_charlength($charlength) {
 	$excerpt = get_the_excerpt();
 	$charlength++;
 
@@ -226,5 +235,4 @@ function cwp_excerpt_max_charlength($charlength) {
 	} else {
 		echo $excerpt;
 	}
-}  
-
+} 
