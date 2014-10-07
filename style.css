@@ -1,19 +1,19 @@
 /*
-	Theme Name: MetroX
-	Theme URI: http://themeisle.com/themes/metrox/
-	Description: MetroX is a free creative WordPress theme, super clean and fully responsive design. Coded with care in HTML5 &amp; CSS3, is easy to customize and well documented.
+	Theme Name: Metro CreativeX
+	Theme URI: https://themeisle.com/themes/metrox/
+	Description: Metro CreativeX is a free metro WordPress theme, super clean and fully responsive design. Coded with care in HTML5 &amp; CSS3, is easy to customize and well documented.
 	Author: codeinwp
-	Author URI: Codeinwp.com
-	Version: 1.0.5
+	Author URI: themeisle.com
+	Version: 1.1
 	Tags: gray, dark, white, black, purple, red, green, yellow, blue, two-columns,responsive-layout, fluid-layout, custom-menu, custom-header, custom-background, editor-style, featured-images, threaded-comments, translation-ready, post-formats
 	License: GNU General Public License v3.0
-	
+
 	License URI: license.txt
-	
-    MetroX is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+
+    Metro CreativeX is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 */
 /* Reset */html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;} input, textarea, img { outline: none; border:none;-webkit-appearance: none;border-radius: 0; }article, aside, figure, footer, header, hgroup, nav, section, time {display: block;}a {text-decoration: none;color: inherit;}.clearfix { clear: both; }
-html { font-size: 62.5%; } 
+html { font-size: 62.5%; }
 body {
 	background: #212121;
 	font-size: normal;
@@ -21,8 +21,8 @@ body {
 }
 .cf:before,
 .cf:after {
-    content: " "; 
-    display: table; 
+    content: " ";
+    display: table;
 }
 .cf:after {
     clear: both;
@@ -45,17 +45,17 @@ body {
 .color-stuff:hover, .color_nor-stuff { color: #6b2fc0; }
 /* Header */
 header nav a .read {
-	-webkit-transition: all 0.5s cubic-bezier(.71, .48, .37, .94); 
-	-moz-transition: all 0.5s cubic-bezier(.71, .48, .37, .94); 
+	-webkit-transition: all 0.5s cubic-bezier(.71, .48, .37, .94);
+	-moz-transition: all 0.5s cubic-bezier(.71, .48, .37, .94);
 	transition: all 0.5s cubic-bezier(.71, .48, .37, .94);
-} 
+}
 img{
 	max-width:100%;
 	height:auto;
  }
-#searchform .searchbutton, 
-#content article, 
-#topside .pages a, 
+#searchform .searchbutton,
+#content article,
+#topside .pages a,
 #respond #submit {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -86,7 +86,7 @@ header nav {
 	border-top: 1px solid #141414;
 	font-family: 'Open Sans', sans-serif;
 }
-header nav ul, 
+header nav ul,
 header nav li { list-style: none !important; }
 header nav a,
 .openmenuresp {
@@ -119,7 +119,7 @@ header nav a:hover .read {
 	color: #fff;
 }
 header nav a .read p { margin-top: 8px; }
-header nav a .read span, #searchform .searchbutton:hover { 
+header nav a .read span, #searchform .searchbutton:hover {
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
 	opacity: 0.5;
@@ -149,7 +149,7 @@ header nav a .read span, #searchform .searchbutton:hover {
 	float: left;
 	margin: 0 4% 4% 0;
 	-ms-word-wrap: break-word;
-	
+
 	word-wrap: break-word;
 	padding: 2rem 0 0 0;
 }
@@ -223,8 +223,8 @@ header nav a .read span, #searchform .searchbutton:hover {
 	margin-bottom: 1rem;
 	position: relative;
 }
-#content article .img img { 
-	width: 100%; 
+#content article .img img {
+	width: 100%;
 	position: absolute;
 }
 .bx-pager,
@@ -308,6 +308,7 @@ header nav a .read span, #searchform .searchbutton:hover {
 #searchform .searchbutton:hover { cursor: pointer; }
 #topside .pages {
 	width: 66.5%;
+
 	height: 4.6rem;
 	border-bottom: 1px solid #333330;
 	float: left;
@@ -321,13 +322,13 @@ header nav a .read span, #searchform .searchbutton:hover {
 	display: block;
 	position: relative;
 }
-#topside .pages li ul { 
+#topside .pages li ul {
 	width: 14rem;
 	position: absolute;
-	display: none; 
+	display: none;
 	top: 4.7rem;
 	z-index: 9999;
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.98);
 }
 #topside .pages li ul li {
 	display: block;
@@ -336,14 +337,14 @@ header nav a .read span, #searchform .searchbutton:hover {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	padding: 1rem;
 }
-#topside .pages li ul li ul { 
+#topside .pages li ul li ul {
 	top: 0;
-	left: 14rem; 
+	left: 14rem;
 }
 #topside .pages li:last-child,
 #topside .pages li:hover:last-child { border: none; }
-#topside .pages li li a { 
-	padding: 0; 
+#topside .pages li li a {
+	padding: 0;
 	line-height: 2.6rem;
 }
 #topside .pages li a:hover { color: #fff; }
@@ -360,6 +361,7 @@ header nav a .read span, #searchform .searchbutton:hover {
 #topside .pages li:hover {
 	border-bottom: 1px solid #5e5b53;
 	color: #fff;
+    margin-bottom:-2px;
 }
 #topside h1 {
 	font-size: 3rem;
@@ -397,7 +399,7 @@ footer {
 	float: right;
 	margin: 2rem 3% 0 0;
 	font-size: 1.6rem;
-	line-height: 2.8rem;	
+	line-height: 2.8rem;
 }
 .post .post_img {
 	max-width: 20rem;
@@ -418,31 +420,31 @@ footer {
 .post p {
 	margin-bottom: 1.5rem;
 }
-.post h1, .comm_content h1 {font-size: 2.8rem;}
-.post h2, .comm_content h2 {font-size: 2.2rem;}
-.post h3, .comm_content h3 {font-size: 2rem;}
-.post h4, .comm_content h4 {font-size: 1.6rem;}
-.post h5, .comm_content h5 {font-size: 1.4rem;}
-.post h6, .comm_content h6 {font-size: 1.2rem;}
-.post table, .comm_content table { 
+.post h1 {font-size: 2.8rem;}
+.post h2 {font-size: 2.2rem;}
+.post h3 {font-size: 2rem;}
+.post h4 {font-size: 1.6rem;}
+.post h5 {font-size: 1.4rem;}
+.post h6 {font-size: 1.2rem;}
+.post table {
 	border: 1px solid #555;
 	margin: 1.5rem 0;
 }
-.post td, .comm_content td {
+.post td {
 	border-top: 1px solid #555;
 	padding: 0.5rem;
 }
-.post ul, .comm_content ul, 
-.post li, .comm_content li,
-.post ol, .comm_content ol,
-.post dl, .comm_content dl,
-.post dd, .comm_content dd { 
+.post ul,
+.post li,
+.post ol,
+.post dl,
+.post dd {
 	margin-left: 1.4rem;
 }
-.post strong, .comm_content strong {
+.post strong {
 	color: #fff;
 }
-.post blockquote, .comm_content blockquote {
+.post blockquote {
 	width: 96%;
 	padding: 2%;
 	background: #333;
@@ -451,46 +453,16 @@ footer {
 	border-top-left-radius: 0;
 	font-style: italic;
 }
-.post blockquote p, .comm_content blockquote p { 
-	margin-bottom: 0px !important; 
+.post blockquote p {
+	margin-bottom: 0px !important;
 }
-.post cite , .comm_content cite{
+.post cite {
 	font-size: 1.2rem;
 	color: #999;
-	font-style: normal;
-	display: block;
 }
-.post cite:before, .comm_content cite:before {
+.post cite:before {
 	content: "\A";
     white-space: pre;
-}
-
-.post code, .comm_content code {
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-	border-radius: 3px;
-	background: #f2f2f2;
-	border: 1px solid #e6e6e6;
-	color: #888;
-	padding: 2px 4px;
-}
-.post pre, .comm_content pre {
-	white-space: pre;
-	word-wrap: normal;
-	overflow-x: scroll;
-	line-height: 1.3;
-	margin: 1em 0;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-	border-radius: 3px;
-	background: #f2f2f2;
-	border: 1px solid #e6e6e6;
-	color: #888;
-	padding: 2px 4px;
 }
 
 /* =WordPress Core
@@ -688,8 +660,8 @@ a img.aligncenter {
 	border-radius: 10rem;
 	overflow: hidden;
 }
-#comments .comment .avatar img { 
-	width: 110% !important; 
+#comments .comment .avatar img {
+	width: 110% !important;
 	height: auto !important;
 }
 #comments .comment .comm_content {
@@ -719,7 +691,7 @@ a img.aligncenter {
 }
 .left-sidebar li {
 	font-size: 1.8rem;
-	list-style:none;	
+	list-style:none;
 }
 .left-sidebar a{
 	/*
@@ -949,8 +921,8 @@ h3.widget-title{
 }
 @media only screen and (max-width: 768px) {
 	body { max-width: 768px; }
-	#content article { 
-		width: 100% !important; 
+	#content article {
+		width: 100% !important;
 		margin-right: 0 !important;
 	}
 	header.header {
@@ -999,7 +971,7 @@ h3.widget-title{
 		height: 5rem !important;
 	}
 	#content article .post_content {
-		width: 85%; 
+		width: 85%;
 	}
 	#content article .post_content .short_excerpt {
 		font-size: 1.6rem;
@@ -1008,11 +980,11 @@ h3.widget-title{
 		width: 93%;
 		padding: 3%;
 	}
-	#respond label, 
+	#respond label,
 	#comments .comment .comm_content {
 		font-size: 1.4rem;
 	}
-	
+
 	#comments .comment .avatar,
 	#topside h1 span { display: none; }
 	.sidebar-desktop{ display: none;}
