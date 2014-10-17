@@ -1,16 +1,15 @@
 /*
-	Theme Name: Metro CreativeX
-	Theme URI: https://themeisle.com/themes/metrox/
-	Description: Metro CreativeX is a free metro WordPress theme, super clean and fully responsive design. Coded with care in HTML5 &amp; CSS3, is easy to customize and well documented.
-	Author: codeinwp
-	Author URI: themeisle.com
-	Version: 1.2
-	Tags: gray, dark, white, black, purple, red, green, yellow, blue, two-columns,responsive-layout, fluid-layout, custom-menu, custom-header, custom-background, editor-style, featured-images, threaded-comments, translation-ready, post-formats
-	License: GNU General Public License v3.0
+Theme Name: Metro CreativeX
+Theme URI: https://themeisle.com/themes/metrox/
+Description: Metro CreativeX is a free metro WordPress theme, super clean and fully responsive design. Coded with care in HTML5 &amp; CSS3, is easy to customize and well documented.
+Author: codeinwp
+Author URI: themeisle.com
+Version: 1.2.1
+Tags: gray, dark, white, black, purple, red, green, yellow, blue, two-columns,responsive-layout, fluid-layout, custom-menu, custom-header, custom-background, editor-style, featured-images, threaded-comments, translation-ready, post-formats
+License: GNU General Public License v3.0
 
-	License URI: license.txt
-
-    Metro CreativeX is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+License URI: license.txt
+Metro CreativeX is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 */
 /* Reset */html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;} input, textarea, img { outline: none; border:none;-webkit-appearance: none;border-radius: 0; }article, aside, figure, footer, header, hgroup, nav, section, time {display: block;}a {text-decoration: none;color: inherit;}.clearfix { clear: both; }
 html { font-size: 62.5%; }
