@@ -45,40 +45,40 @@ function metro_creativex_customize_register( $wp_customize ) {
 	   )
 	));
 
-	$wp_customize->add_section( 'codeinwp_logo_section' , array(
+	$wp_customize->add_section( 'metro_creativex_logo_logo_section' , array(
     	'title'       => __( 'Logo', 'metro-creativex' ),
     	'priority'    => 31,
     	'description' => __('Upload a logo to replace the default site name and description in the header','metro-creativex'),
 	) );
 
-	$wp_customize->add_setting( 'codeinwp_logo',
+	$wp_customize->add_setting( 'metro-creativex_logo',
         array('sanitize_callback' => 'esc_url_raw') );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'metro-creativex_logo', array(
 	    'label'    => __( 'Logo', 'metro-creativex' ),
-	    'section'  => 'codeinwp_logo_section',
-	    'settings' => 'codeinwp_logo',
+	    'section'  => 'metro_creativex_logo_logo_section',
+	    'settings' => 'metro-creativex_logo',
 	) ) );
 
 
 	/* Socials */
-	$wp_customize->add_section( 'codeinwp_socials_section' , array(
+	$wp_customize->add_section( 'metro_creativex_socials_section' , array(
     	'title'       => __( 'Socials', 'metro-creativex' ),
     	'priority'    => 32,
 	) );
 
-	$wp_customize->add_setting( 'codeinwp_social_link_fb', array('sanitize_callback' => 'esc_url_raw') );
-	$wp_customize->add_control( 'codeinwp_social_link_fb', array(
+	$wp_customize->add_setting( 'metro-creativex_social_link_fb', array('sanitize_callback' => 'esc_url_raw') );
+	$wp_customize->add_control( 'metro-creativex_social_link_fb', array(
 	    'label'    => __( 'Facebook link', 'metro-creativex' ),
-	    'section'  => 'codeinwp_socials_section',
-	    'settings' => 'codeinwp_social_link_fb',
+	    'section'  => 'metro_creativex_socials_section',
+	    'settings' => 'metro-creativex_social_link_fb',
 
 		'priority'    => 5,
 	) );
-	$wp_customize->add_setting( 'codeinwp_social_link_tw', array('sanitize_callback' => 'esc_url_raw') );
-	$wp_customize->add_control( 'codeinwp_social_link_tw', array(
+	$wp_customize->add_setting( 'metro-creativex_social_link_tw', array('sanitize_callback' => 'esc_url_raw') );
+	$wp_customize->add_control( 'metro-creativex_social_link_tw', array(
 	    'label'    => __( 'Twitter link', 'metro-creativex' ),
-	    'section'  => 'codeinwp_socials_section',
-	    'settings' => 'codeinwp_social_link_tw',
+	    'section'  => 'metro_creativex_socials_section',
+	    'settings' => 'metro-creativex_social_link_tw',
 		'priority'    => 10,
 	) );
 
