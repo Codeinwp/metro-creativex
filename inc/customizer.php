@@ -36,7 +36,7 @@ function metro_creativex_customize_register( $wp_customize ) {
 		'priority'   => 30,
 	));
 	$wp_customize->add_setting(
-        'metro_creativex_theme_notes'
+        'metro_creativex_theme_notes', array('sanitize_callback' => 'metro_creativex_sanitize_notes')
 	);
 
 	$wp_customize->add_control( new metro_creativex_Theme_Support( $wp_customize, 'metro_creativex_theme_notes',
@@ -84,6 +84,13 @@ function metro_creativex_customize_register( $wp_customize ) {
 
 }
 add_action( 'customize_register', 'metro_creativex_customize_register' );
+
+function metro_creativex_sanitize_notes( $input ) {
+
+    return $input;
+
+}
+
 
 /**
  * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
