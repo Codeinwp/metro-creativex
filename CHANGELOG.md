@@ -1,5 +1,13 @@
 
 
+### 1.2.6 - 30/12/2014
+
+ Changes: 
+
+
+ * added tgm activation
+
+
 ### 1.2.5 - 08/12/2014
 
  Changes: 
