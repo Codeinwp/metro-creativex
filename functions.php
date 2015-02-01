@@ -157,9 +157,9 @@ function metro_creativex_register_required_plugins()
 
         array(
  
-            'name'      => 'WP Product Review',
+            'name'      => 'Custom Login customizer',
  
-            'slug'      => 'wp-product-review',
+            'slug'      => 'login-customizer',
  
             'required'  => false,
  
