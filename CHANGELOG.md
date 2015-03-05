@@ -1,5 +1,17 @@
 
 
+### 1.2.8 - 05/03/2015
+
+ Changes: 
+
+
+ * Replaced screenshot
+ * Merge pull request #15 from DragosBubu/development
+
+Replaced screenshot
+ * Changed screenshot
+
+
 ### 1.2.6 - 30/12/2014
 
  Changes: 
