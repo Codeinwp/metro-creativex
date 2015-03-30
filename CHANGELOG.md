@@ -1,5 +1,21 @@
 
 
+### 1.2.9 - 30/03/2015
+
+ Changes: 
+
+
+ * Date issue fixed
+
+Fixed issue with date which was causing a lot of sites to display same
+date on all the posts.
+
+Issue: https://github.com/Codeinwp/metro-creativex/issues/19
+ * Merge pull request #20 from HardeepAsrani/development
+
+Date issue fixed
+
+
 ### 1.2.8 - 05/03/2015
 
  Changes: 
