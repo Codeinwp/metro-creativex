@@ -1,5 +1,13 @@
 
 
+### 1.3.0 - 24/04/2015
+
+ Changes: 
+
+
+ * Fixed #22, masonry console error
+
+
 ### 1.2.9 - 30/03/2015
 
  Changes: 
