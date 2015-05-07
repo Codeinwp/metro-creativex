@@ -103,6 +103,18 @@ header nav a,
 	height: 40px;
 	width: 100%;
 }
+header nav a {
+	display: table;
+	overflow: hidden;
+	position:relative;
+}
+header nav a span {
+	width: 100%;
+	padding-right: 30%;
+	line-height: 22px;
+	display: table-cell;
+	vertical-align: middle;
+}
 header nav a .read {
 	float: right;
 	width: 0;
@@ -113,6 +125,9 @@ header nav a .read {
 	margin-right: -3%;
 	font-size: 1.2rem;
 	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 header nav a:hover .read {
 	width: 30%;
