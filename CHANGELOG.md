@@ -1,5 +1,13 @@
 
 
+### 1.3.2 - 23/06/2015
+
+ Changes: 
+
+
+ * Added custom colors support
+
+
 ### 1.3.0 - 24/04/2015
 
  Changes: 
