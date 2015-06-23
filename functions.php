@@ -351,3 +351,42 @@ function metro_creativex_excerpt_max_charlength($charlength) {
 	}
 }
 
+add_action('wp_footer','metro_creativex_php_style', 100);
+
+function metro_creativex_php_style() {
+	
+	echo ' <style type="text/css">';
+	
+	$metro_creativex_text_color = get_theme_mod('metro-creativex_text_color');
+	if( !empty($metro_creativex_text_color) ):
+		echo '	#topside h1, #content article .post_content, #content p, .insidepost_date, header, #searchform .searchtext, p, span { color: '. $metro_creativex_text_color .' !important; }';
+	endif;
+	
+	$metro_creativex_link_color = get_theme_mod('metro-creativex_link_color');
+	if( !empty($metro_creativex_link_color) ):
+		echo ' .left-sidebar li a, #content article .post_content a, a { color: '. $metro_creativex_link_color .' !important; }';
+	endif;	
+	
+	$metro_creativex_link_color_hover = get_theme_mod('metro-creativex_link_color_hover');
+	if( !empty($metro_creativex_link_color_hover) ):
+		echo ' .left-sidebar li a:hover, #content article .post_content a:hover, a:hover { color: '. $metro_creativex_link_color_hover .' !important; }';
+	endif;	
+	
+	$metro_creativex_nav_color = get_theme_mod('metro-creativex_nav_color');
+	if( !empty($metro_creativex_nav_color) ):
+		echo ' #topside .pages ul a { color: '. $metro_creativex_nav_color .' !important; }';
+	endif;	
+	
+	$metro_creativex_nav_color_hover = get_theme_mod('metro-creativex_nav_color_hover');
+	if( !empty($metro_creativex_nav_color_hover) ):
+		echo ' #topside .pages ul a:hover { color: '. $metro_creativex_nav_color_hover .' !important; }';
+	endif;		
+	
+	$metro_creativex_sidebar_title_color = get_theme_mod('metro-creativex_sidebar_title_color');
+	if( !empty($metro_creativex_sidebar_title_color) ):
+		echo ' .widget-title { color: '. $metro_creativex_sidebar_title_color .' !important; }';
+	endif;	
+	
+	echo '</style>';
+	
+}
