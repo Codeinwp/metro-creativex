@@ -81,7 +81,86 @@ function metro_creativex_customize_register( $wp_customize ) {
 	    'settings' => 'metro-creativex_social_link_tw',
 		'priority'    => 10,
 	) );
-
+	
+	/* colors */
+	$wp_customize->add_setting( 'metro-creativex_text_color', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_control(
+	    new WP_Customize_Color_Control( 
+			$wp_customize, 
+			'metro-creativex_text_color', 
+			array(
+				'label'      => __( 'Texts color', 'metro-creativex' ),
+				'section'    => 'colors',
+				'settings'   => 'metro-creativex_text_color',
+				'priority'   => 10
+			) ) 
+	);
+	
+	$wp_customize->add_setting( 'metro-creativex_link_color', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_control(
+	    new WP_Customize_Color_Control( 
+			$wp_customize, 
+			'metro-creativex_link_color', 
+			array(
+				'label'      => __( 'Links color', 'metro-creativex' ),
+				'section'    => 'colors',
+				'settings'   => 'metro-creativex_link_color',
+				'priority'   => 11
+			) ) 
+	);
+	
+	$wp_customize->add_setting( 'metro-creativex_link_color_hover', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_control(
+	    new WP_Customize_Color_Control( 
+			$wp_customize, 
+			'metro-creativex_link_color_hover', 
+			array(
+				'label'      => __( 'Links color - hover', 'metro-creativex' ),
+				'section'    => 'colors',
+				'settings'   => 'metro-creativex_link_color_hover',
+				'priority'   => 12
+			) ) 
+	);
+	
+	$wp_customize->add_setting( 'metro-creativex_nav_color', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_control(
+	    new WP_Customize_Color_Control( 
+			$wp_customize, 
+			'metro-creativex_nav_color', 
+			array(
+				'label'      => __( 'Navigation menu color', 'metro-creativex' ),
+				'section'    => 'colors',
+				'settings'   => 'metro-creativex_nav_color',
+				'priority'   => 13
+			) ) 
+	);
+	
+	$wp_customize->add_setting( 'metro-creativex_nav_color_hover', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_control(
+	    new WP_Customize_Color_Control( 
+			$wp_customize, 
+			'metro-creativex_nav_color_hover', 
+			array(
+				'label'      => __( 'Navigation menu color - hover', 'metro-creativex' ),
+				'section'    => 'colors',
+				'settings'   => 'metro-creativex_nav_color_hover',
+				'priority'   => 14
+			) ) 
+	);
+	
+	$wp_customize->add_setting( 'metro-creativex_sidebar_title_color', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_control(
+	    new WP_Customize_Color_Control( 
+			$wp_customize, 
+			'metro-creativex_sidebar_title_color', 
+			array(
+				'label'      => __( 'Sidebar title color', 'metro-creativex' ),
+				'section'    => 'colors',
+				'settings'   => 'metro-creativex_sidebar_title_color',
+				'priority'   => 15
+			) ) 
+	);
+	
 }
 add_action( 'customize_register', 'metro_creativex_customize_register' );
 
