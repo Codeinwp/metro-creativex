@@ -1,5 +1,13 @@
 
 
+### 1.3.3 - 01/07/2015
+
+ Changes: 
+
+
+ * Escaped values from customizer
+
+
 ### 1.3.2 - 23/06/2015
 
  Changes: 
