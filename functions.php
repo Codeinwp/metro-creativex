@@ -390,3 +390,21 @@ function metro_creativex_php_style() {
 	echo '</style>';
 	
 }
+
+add_action( 'metro-creativex_social', 'metro_creativex_social_display', 10 );
+function metro_creativex_social_display(){
+	
+	$metro_creativex_fb_link = get_theme_mod( 'metro-creativex_social_link_fb' );
+	$metro_creativex_tw_link = get_theme_mod( 'metro-creativex_social_link_tw' );
+	if(!empty($metro_creativex_fb_link) || !empty($metro_creativex_tw_link)){
+		echo '<div id="social">';
+			if ( !empty($metro_creativex_fb_link) ) :
+            	echo '<a href="'.esc_url($metro_creativex_fb_link).'"><img src="'. get_template_directory_uri().'/images/facebook.png" alt=""></a>';
+             endif;
+	        if ( !empty($metro_creativex_tw_link) ) :
+				echo '<a href="'.esc_url(  $metro_creativex_tw_link ).'"><img src="'.get_template_directory_uri().'/images/twitter.png" alt=""></a>';
+            endif;
+		echo '</div>';
+	}
+	
+}
