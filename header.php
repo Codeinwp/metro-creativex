@@ -34,37 +34,32 @@
 					echo '<h2 class="site-description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
 				endif; ?>
 			</div><!-- /logo -->
-
-			<div class="fix-height"></div>
 			<div class="openmenuresp"><?php _e('Menu','metro-creativex'); ?></div>
-			<nav>
-				<?php
-				  $metro_creativex_terms = get_categories();
-				  if ($metro_creativex_terms) {
-				    foreach( $metro_creativex_terms as $metro_creativex_term ) {
-				    	$metro_creativex_post_nr = $metro_creativex_term->count;
-				    	if ( $metro_creativex_post_nr == "1" )
-				    		$metro_creativex_post_nr_display = "article";
-				    	else {
-				    		$metro_creativex_post_nr_display = 'articles';
-				    	}
-				  	  echo '
-				  	  	<a href="' . get_category_link( $metro_creativex_term->term_id ) . '" class="color-code" title="' . $metro_creativex_term->name.'">
-							' .'<span>'. $metro_creativex_term->name.'</span>'.'
-							<div class="read bg-code">
-								<p>'.$metro_creativex_post_nr.'</p><span>'.$metro_creativex_post_nr_display.'</span>
-							</div>
-						</a>';
-						}
-				  }
-				?>
+			<nav class ="metro_customizr_on_mobile">
+			<?php
+			  $metro_creativex_terms = get_categories();
+			  if ($metro_creativex_terms) {
+				foreach( $metro_creativex_terms as $metro_creativex_term ) {
+					$metro_creativex_post_nr = $metro_creativex_term->count;
+					if ( $metro_creativex_post_nr == "1" )
+						$metro_creativex_post_nr_display = "article";
+					else {
+						$metro_creativex_post_nr_display = 'articles';
+					}
+				  echo '
+					<a href="' . get_category_link( $metro_creativex_term->term_id ) . '" class="color-code" title="' . $metro_creativex_term->name.'">
+						' .'<span>'. $metro_creativex_term->name.'</span>'.'
+						<div class="read bg-code">
+							<p>'.$metro_creativex_post_nr.'</p><span>'.$metro_creativex_post_nr_display.'</span>
+						</div>
+					</a>';
+					}
+			  }
+			?>
 			</nav>
 			<div class="navrespgradient"></div>
-			<div class="left-sidebar sidebar-desktop">
-				<?php get_sidebar(); ?>
-			</div>
 			<?php
-				do_action('metro-creativex_social');
+				do_action('metro-creativex_sidebar');
 			?>
 	</header>
 		<div id="topside">

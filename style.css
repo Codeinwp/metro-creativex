@@ -385,6 +385,16 @@ header nav a .read span, #searchform .searchbutton:hover {
 	line-height: 5rem;
 	padding-top: 6rem;
 }
+
+#logo h3 {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #fff;
+    line-height: 5rem;
+    padding-top: 10px;
+}
+
+
 #topside h1 span {
 	font-size: 1.2rem;
 	font-style: italic;

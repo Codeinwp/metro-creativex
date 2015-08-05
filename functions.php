@@ -391,9 +391,59 @@ function metro_creativex_php_style() {
 	
 }
 
-add_action( 'metro-creativex_social', 'metro_creativex_social_display', 10 );
-function metro_creativex_social_display(){
+
+add_action( 'metro-creativex_sidebar', 'metro_creativex_sidebar_display', 10 );
+function metro_creativex_sidebar_display(){
+?>
+	<div class="fix-height"></div>
 	
+	<nav>
+		<?php
+		  $metro_creativex_terms = get_categories();
+		  if ($metro_creativex_terms) {
+			foreach( $metro_creativex_terms as $metro_creativex_term ) {
+				$metro_creativex_post_nr = $metro_creativex_term->count;
+				if ( $metro_creativex_post_nr == "1" )
+					$metro_creativex_post_nr_display = "article";
+				else {
+					$metro_creativex_post_nr_display = 'articles';
+				}
+			  echo '
+				<a href="' . get_category_link( $metro_creativex_term->term_id ) . '" class="color-code" title="' . $metro_creativex_term->name.'">
+					' .'<span>'. $metro_creativex_term->name.'</span>'.'
+					<div class="read bg-code">
+						<p>'.$metro_creativex_post_nr.'</p><span>'.$metro_creativex_post_nr_display.'</span>
+					</div>
+				</a>';
+				}
+		  }
+		?>
+	</nav>
+	
+	<div class="left-sidebar sidebar-desktop">
+		<?php get_sidebar(); ?>
+	</div>		
+<?php
+	 do_action('metro_creativex_social');
+}
+
+add_action('show_title','metro_creativex_blog_title');
+function metro_creativex_blog_title(){
+	echo '<h1>';
+		_e('Latest articles','metro-creativex');
+	echo '</h1>';
+}
+
+
+add_action('page_title','metro_creativex_page_title');
+function metro_creativex_page_title(){
+	echo '<h1 class="insidepost">';
+		the_title();
+	echo '</h1>';
+}
+
+add_action('metro_creativex_social','metro_creativex_social_display');
+function metro_creativex_social_display(){
 	$metro_creativex_fb_link = get_theme_mod( 'metro-creativex_social_link_fb' );
 	$metro_creativex_tw_link = get_theme_mod( 'metro-creativex_social_link_tw' );
 	if(!empty($metro_creativex_fb_link) || !empty($metro_creativex_tw_link)){
@@ -406,5 +456,16 @@ function metro_creativex_social_display(){
             endif;
 		echo '</div>';
 	}
-	
+}
+
+
+
+add_action('admin_menu', 'my_plugin_menu');
+
+function my_plugin_menu() {
+	add_theme_page('Metro CustomizR', 'Metro CustomizR', 'edit_theme_options', 'metro-customizr-page', 'Metro_customizr_page');
+}
+
+function Metro_customizr_page() {
+    echo "<h2>" . __( 'Test Sublevel', 'menu-test' ) . "</h2>";
 }
