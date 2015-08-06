@@ -459,13 +459,121 @@ function metro_creativex_social_display(){
 }
 
 
+function metro_creativex_admin_styles() {
+	wp_enqueue_style( 'metro_creativex_admin_stylesheet', get_template_directory_uri().'/css/admin-style.css','1.0.0' );
+}
+add_action( 'admin_enqueue_scripts', 'metro_creativex_admin_styles', 10 );
 
-add_action('admin_menu', 'my_plugin_menu');
 
-function my_plugin_menu() {
-	add_theme_page('Metro CustomizR', 'Metro CustomizR', 'edit_theme_options', 'metro-customizr-page', 'Metro_customizr_page');
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if(!is_plugin_active( 'metro-customizr/metro-customizr.php' )){
+	add_action('admin_menu', 'metro_customizr_menu');
+}
+function metro_customizr_menu() {
+	add_theme_page('Metro CustomizR', 'Metro CustomizR', 'edit_theme_options', 'metro-customizr-page', 'metro_customizr_page');
 }
 
-function Metro_customizr_page() {
-    echo "<h2>" . __( 'Test Sublevel', 'menu-test' ) . "</h2>";
+function metro_customizr_page() {
+?>
+	<div class="metro-customizr-jumbotron">
+		<div class="container">
+			<div class="metro-customizr-logo">
+				<a href="http://themeisle.com/"><img src="<?php echo get_template_directory_uri().'/images/th_logo.png'?>"/></a>
+			</div>
+			<h1><?php _e('Get unlimited customization possibilities','metro-creativex'); ?></h1>
+			<p><?php _e('Fonts, colors, layout, everything is customizable. Super easy, super fast!','metro-creativex');?></p>
+			<a href=""><?php _e('Get Metro CustomizR now!','metro-creativex');?></a>
+		</div>
+	</div>
+	<div class="metro-customizr-presentation">
+		<div class="container">
+			<h1><?php _e('What You Will Get','metro-creativex'); ?></h1>
+			<article>
+				<p>
+					<?php
+						_e('Metro CustomizR is an addon plugin for Metro CreativeX that allows you to customize your theme the way you want. No more child themes or support needed. Just install it and you\'re ready to customize your website. Easy peasy!','metro-creativex');
+					?>
+				</p>
+			</article>
+			<div class="metro-customizr-left-col">
+				<div class="metro-customizr-box">
+					<img src="<?php echo get_template_directory_uri().'/images/palette.png'?>"/>
+					<h3><?php _e('Palette picker','metro-creativex');?></h3>
+					<p><?php _e('Change your page colors in just a few clicks with our palette picker control.','metro-creativex'); ?></p>
+				</div>
+				<div class="metro-customizr-box">
+					<img src="<?php echo get_template_directory_uri().'/images/individual.png'?>"/>
+					<h3><?php _e('Individual post color','metro-creativex');?></h3>
+					<p><?php _e('No more child theme required.Customize each post background color.','metro-creativex'); ?></p>
+				</div>
+			</div>
+			<div class="metro-customizr-right-col">
+				<div class="metro-customizr-box">
+					<img src="<?php echo get_template_directory_uri().'/images/document.png'?>"/>
+					<h3><?php _e('Website layout','metro-creativex');?></h3>
+					<p><?php _e('With just one click you can change the sidebar position.','metro-creativex'); ?></p>
+				</div>
+				<div class="metro-customizr-box">
+					<img src="<?php echo get_template_directory_uri().'/images/fonts.jpg'?>"/>
+					<h3><?php _e('Fonts','metro-creativex');?></h3>
+					<p><?php _e('Choose from over 100 fonts to style your page.','metro-creativex'); ?></p>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php
 }
+
+add_action('single_header','display_single_header');
+function display_single_header(){
+?>
+	<h1 class="insidepost" style="background-image:url(
+	<?php 
+	$metro_creativex_template_url = get_template_directory_uri();
+	if (has_post_format( 'aside' )) {
+		echo $metro_creativex_template_url.'/images/pt_aside.png';
+	} elseif (has_post_format( 'audio' )) {
+		echo $metro_creativex_template_url.'/images/pt_audio.png';
+	} elseif (has_post_format( 'chat' )) {
+		echo $metro_creativex_template_url.'/images/pt_chat.png';
+	} elseif (has_post_format( 'gallery' )) {
+		echo $metro_creativex_template_url.'/images/pt_gallery.png';
+	} elseif (has_post_format( 'image' )) {
+		echo $metro_creativex_template_url.'/images/pt_image.png';
+	} elseif (has_post_format( 'link' )) {
+		echo $metro_creativex_template_url.'/images/pt_link.png';
+	} elseif (has_post_format( 'quote' )) {
+		echo $metro_creativex_template_url.'/images/pt_quote.png';
+	} elseif (has_post_format( 'status' )) {
+		echo $metro_creativex_template_url.'/images/pt_status.png';
+	} elseif (has_post_format( 'video' )) {
+		echo $metro_creativex_template_url.'/images/pt_video.png';
+	} else {
+		echo $metro_creativex_template_url.'/images/pt_standard.png';
+	}
+	?>);"><?php the_title(); ?></h1>
+	<div class="insidepost_date"><?php echo get_the_date(); ?> - <?php the_category(', ') ?></div>		
+<?php
+}
+
+add_action('archive_title','display_archive_title');
+function display_archive_title(){
+?>
+	<h1>
+		<?php
+			if ( is_day() ) :
+				printf( __( 'Daily Archives: %s', 'metro-creativex' ), get_the_date() );
+			elseif ( is_month() ) :
+				printf( __( 'Monthly Archives: %s', 'metro-creativex' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'metro-creativex' ) ) );
+			elseif ( is_year() ) :
+				printf( __( 'Yearly Archives: %s', 'metro-creativex' ), get_the_date( _x( 'Y', 'yearly archives date format', 'metro-creativex' ) ) );
+			else :
+				single_cat_title();
+			endif;
+		?>
+	</h1>
+<?php
+}
+
+
+
