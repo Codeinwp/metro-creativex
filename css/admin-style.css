@@ -5,19 +5,15 @@
         rgba(0, 0, 0, 0.5)
     )
         , url(../images/customizr_logo.jpg) no-repeat center center fixed;
-/*
-    background-repeat:  no-repeat; 
-    background-position:  center center fixed;
-*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: auto;
-    margin-right: 20px;
     text-align: center;
-    padding: 70px;
+    padding: 70px 0px;
     margin-top: 20px;
     color:#FFFFFF;
+    width: 100%;
 }
 
 .container{
@@ -44,10 +40,11 @@
 
 .metro-customizr-presentation{
     background-color: #FFFFFF;
-    padding: 20px;
+    padding: 20px 0px;
     text-align: center;
     margin-right: 20px;
     float: left;
+    width: 100%;
 }
 
 .metro-customizr-presentation h1{
