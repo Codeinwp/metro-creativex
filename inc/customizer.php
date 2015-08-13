@@ -51,8 +51,10 @@ function metro_creativex_customize_register( $wp_customize ) {
     	'description' => __('Upload a logo to replace the default site name and description in the header','metro-creativex'),
 	) );
 
-	$wp_customize->add_setting( 'metro-creativex_logo',
-        array('sanitize_callback' => 'esc_url_raw') );
+	$wp_customize->add_setting( 'metro-creativex_logo',array(
+		'sanitize_callback' => 'esc_url_raw',
+		'transport' => 'postMessage'
+	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'metro-creativex_logo', array(
 	    'label'    => __( 'Logo', 'metro-creativex' ),
 	    'section'  => 'metro_creativex_logo_logo_section',
@@ -175,6 +177,6 @@ function metro_creativex_sanitize_notes( $input ) {
  * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function metro_creativex_customize_preview_js() {
-	wp_enqueue_script( 'customizerJS', get_template_directory_uri() . '/js/customizer.js', array( 'jquery' ), '20131205', true );
+	wp_enqueue_script( 'customizerJS', get_template_directory_uri() . '/js/customizer.js', array( 'jquery' ), '1.0.0', true );
 }
 add_action( 'customize_preview_init', 'metro_creativex_customize_preview_js' );

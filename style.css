@@ -30,6 +30,9 @@ body {
 .cf {
     *zoom: 1;
 }
+.metro_creativex_only_customizer{
+	display: none;
+}
 /* Colors */
 .bg-code { background: #d1334e; }
 .color-code:hover, .color_nor-code { color: #d1334e; }

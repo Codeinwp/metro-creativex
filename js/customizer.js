@@ -33,4 +33,22 @@
 			}
 		} );
 	} );
+	
+	
+	wp.customize( 'metro-creativex_logo', function( value ) {
+		value.bind( function( to ) {
+			if( to != '' ) {
+				$( '.site-logo' ).removeClass( 'metro_creativex_only_customizer' );
+				$( '.header-logo-wrap' ).addClass( 'metro_creativex_only_customizer' );
+			}
+			else {
+				$( '.site-logo' ).addClass( 'metro_creativex_only_customizer' );
+				$( '.header-logo-wrap' ).removeClass( 'metro_creativex_only_customizer' );
+			}
+				
+            $(".site-logo img").attr( "src", to );
+		} );
+	} );
+	
+	
 } )( jQuery );
