@@ -61,13 +61,56 @@ function metro_creativex_customize_register( $wp_customize ) {
 	    'settings' => 'metro-creativex_logo',
 	) ) );
 
-
+	require_once ( 'class/class-metro-creativex-text-control.php');
+	
+	/* General */
+	$wp_customize->add_section( 'metro_creativex_general_section' , array(
+    	'title'       => __( 'General', 'metro-creativex' ),
+    	'priority'    => 31,
+	) );
+	
+	$wp_customize->add_setting( 'metro-creativex_fonts_msg', array(
+			'sanitize_callback' => 'metro_creativex_sanitize_notes',
+	) );
+	
+	$wp_customize->add_control( new Metro_Creativex_Message( $wp_customize, 'metro-creativex_fonts_msg',
+		array(
+			'label'    => __( 'Font', 'metro-creativex' ),
+			'section' => 'metro_creativex_general_section',
+			'priority' => 1
+	   ),__('Choose the font that suits your page.<br/>Font picker is available in <a href="'.esc_url(get_admin_url()).'/themes.php?page=metro-customizr-page" target="_blank" >Metro CustomizR</a>','metro-creativex')
+	));
+	
+	$wp_customize->add_setting( 'metro-creativex_layout_msg', array(
+			'sanitize_callback' => 'metro_creativex_sanitize_notes',
+	) );
+	
+	$wp_customize->add_control( new Metro_Creativex_Message( $wp_customize, 'metro-creativex_layout_msg',
+		array(
+			'label'    => __( 'Sidebar position', 'metro-creativex' ),
+			'section' => 'metro_creativex_general_section',
+			'priority' => 1
+	   ),__('Change the sidebar position.<br/>Sidebar position is available in <a href="'.esc_url(get_admin_url()).'/themes.php?page=metro-customizr-page" target="_blank" >Metro CustomizR</a>','metro-creativex')
+	));
+	
 	/* Socials */
 	$wp_customize->add_section( 'metro_creativex_socials_section' , array(
     	'title'       => __( 'Socials', 'metro-creativex' ),
     	'priority'    => 32,
 	) );
-
+	
+	$wp_customize->add_setting( 'metro-creativex_icons_msg', array(
+			'sanitize_callback' => 'metro_creativex_sanitize_notes',
+	) );
+	
+	$wp_customize->add_control( new Metro_Creativex_Message( $wp_customize, 'metro-creativex_icons_msg',
+		array(
+			'label'    => __( 'Add new social icon', 'metro-creativex' ),
+			'section' => 'metro_creativex_socials_section',
+			'priority' => 1
+	   ),__('More icons?<br/>Icon repeater is available in <a href="'.esc_url(get_admin_url()).'/themes.php?page=metro-customizr-page" target="_blank" >Metro CustomizR</a>','metro-creativex')
+	));
+	
 	$wp_customize->add_setting( 'metro-creativex_social_link_fb', array('sanitize_callback' => 'esc_url_raw') );
 	$wp_customize->add_control( 'metro-creativex_social_link_fb', array(
 	    'label'    => __( 'Facebook link', 'metro-creativex' ),
@@ -85,7 +128,21 @@ function metro_creativex_customize_register( $wp_customize ) {
 	) );
 	
 	/* colors */
-	$wp_customize->add_setting( 'metro-creativex_text_color', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_setting( 'metro-creativex_palette_msg', array(
+		'sanitize_callback' => 'metro_creativex_sanitize_notes',
+	) );
+	$wp_customize->add_control( new Metro_Creativex_Message( $wp_customize, 'metro-creativex_palette_msg',
+	    array(
+	    	'label'    => __( 'Change the color scheme', 'metro-creativex' ),
+	        'section' => 'colors',
+			'priority' => 1
+	   ),__('Change all colors with just two clicks.<br/>Pallete picker is available in <a href="'.esc_url(get_admin_url()).'/themes.php?page=metro-customizr-page" target="_blank" >Metro CustomizR</a>','metro-creativex')
+	));
+	
+	$wp_customize->add_setting( 'metro-creativex_text_color', array(
+		'sanitize_callback' => 'metro_creativex_sanitize_notes',
+		'transport' => 'postMessage'
+	) );
 	$wp_customize->add_control(
 	    new WP_Customize_Color_Control( 
 			$wp_customize, 
@@ -98,7 +155,10 @@ function metro_creativex_customize_register( $wp_customize ) {
 			) ) 
 	);
 	
-	$wp_customize->add_setting( 'metro-creativex_link_color', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_setting( 'metro-creativex_link_color', array(
+		'sanitize_callback' => 'metro_creativex_sanitize_notes',
+		'transport' => 'postMessage'
+	) );
 	$wp_customize->add_control(
 	    new WP_Customize_Color_Control( 
 			$wp_customize, 
@@ -111,7 +171,10 @@ function metro_creativex_customize_register( $wp_customize ) {
 			) ) 
 	);
 	
-	$wp_customize->add_setting( 'metro-creativex_link_color_hover', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_setting( 'metro-creativex_link_color_hover', array(
+		'sanitize_callback' => 'metro_creativex_sanitize_notes',
+		'transport' => 'postMessage'
+	) );
 	$wp_customize->add_control(
 	    new WP_Customize_Color_Control( 
 			$wp_customize, 
@@ -124,7 +187,10 @@ function metro_creativex_customize_register( $wp_customize ) {
 			) ) 
 	);
 	
-	$wp_customize->add_setting( 'metro-creativex_nav_color', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_setting( 'metro-creativex_nav_color', array(
+		'sanitize_callback' => 'metro_creativex_sanitize_notes',
+		'transport' => 'postMessage'
+	) );
 	$wp_customize->add_control(
 	    new WP_Customize_Color_Control( 
 			$wp_customize, 
@@ -137,7 +203,10 @@ function metro_creativex_customize_register( $wp_customize ) {
 			) ) 
 	);
 	
-	$wp_customize->add_setting( 'metro-creativex_nav_color_hover', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_setting( 'metro-creativex_nav_color_hover', array(
+		'sanitize_callback' => 'metro_creativex_sanitize_notes',
+		'transport' => 'postMessage'
+	) );
 	$wp_customize->add_control(
 	    new WP_Customize_Color_Control( 
 			$wp_customize, 
@@ -150,7 +219,10 @@ function metro_creativex_customize_register( $wp_customize ) {
 			) ) 
 	);
 	
-	$wp_customize->add_setting( 'metro-creativex_sidebar_title_color', array('sanitize_callback' => 'metro_creativex_sanitize_notes') );
+	$wp_customize->add_setting( 'metro-creativex_sidebar_title_color', array(
+		'sanitize_callback' => 'metro_creativex_sanitize_notes',
+		'transport' => 'postMessage'
+	) );
 	$wp_customize->add_control(
 	    new WP_Customize_Color_Control( 
 			$wp_customize, 
@@ -177,6 +249,6 @@ function metro_creativex_sanitize_notes( $input ) {
  * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function metro_creativex_customize_preview_js() {
-	wp_enqueue_script( 'customizerJS', get_template_directory_uri() . '/js/customizer.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'customizerJS', get_template_directory_uri() . '/js/customizer.js', array( 'jquery' ), '1.0.1', true );
 }
 add_action( 'customize_preview_init', 'metro_creativex_customize_preview_js' );

@@ -29,10 +29,7 @@ function metro_creativex_setup() {
 
     add_editor_style( '/css/custom-editor-style.css' );
 	/* custom background */
-	$args = array(
-	  'default-color' => '000000'
-	);
-	add_theme_support( 'custom-background', $args );
+	add_theme_support( 'custom-background' );
 
     require get_template_directory() . '/inc/customizer.php';
     /* tgm-plugin-activation */
@@ -446,16 +443,16 @@ add_action('metro_creativex_social','metro_creativex_social_display');
 function metro_creativex_social_display(){
 	$metro_creativex_fb_link = get_theme_mod( 'metro-creativex_social_link_fb' );
 	$metro_creativex_tw_link = get_theme_mod( 'metro-creativex_social_link_tw' );
+	echo '<div id="social">';
 	if(!empty($metro_creativex_fb_link) || !empty($metro_creativex_tw_link)){
-		echo '<div id="social">';
 			if ( !empty($metro_creativex_fb_link) ) :
             	echo '<a href="'.esc_url($metro_creativex_fb_link).'"><img src="'. get_template_directory_uri().'/images/facebook.png" alt=""></a>';
              endif;
 	        if ( !empty($metro_creativex_tw_link) ) :
 				echo '<a href="'.esc_url(  $metro_creativex_tw_link ).'"><img src="'.get_template_directory_uri().'/images/twitter.png" alt=""></a>';
             endif;
-		echo '</div>';
 	}
+	echo '</div>';
 }
 
 

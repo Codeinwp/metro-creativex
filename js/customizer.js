@@ -49,6 +49,60 @@
             $(".site-logo img").attr( "src", to );
 		} );
 	} );
+
+	wp.customize( 'metro-creativex_text_color', function( value ) {
+		value.bind( function( to ) {
+		jQuery('#metro_creativex_text_color').remove();
+		prev = '<style id="metro_creativex_text_color" type="text/css">#topside h1, #content article .post_content, #content p, .insidepost_date, header, #searchform .searchtext, p, span { color: '+to+' !important; }</style>';	
+		jQuery('head').append(prev);
+		} );
+		
+	} );
+	
+	wp.customize( 'metro-creativex_link_color', function( value ) {
+		value.bind( function( to ) {
+			jQuery('#metro_creativex_link_color').remove();
+			prev = '<style id="metro_creativex_link_color">.left-sidebar li a, #content article .post_content a, a { color: '+to+' !important; }</style>';
+			jQuery('head').append(prev);
+		} );
+	} );
+	
+	wp.customize( 'metro-creativex_link_color_hover', function( value ) {
+		value.bind( function( to ) {
+			jQuery('#metro_creativex_link_color_hover').remove();
+			prev = '<style id="metro_creativex_link_color_hover">.left-sidebar li a:hover, #content article .post_content a:hover, a:hover { color: '+to+' !important;</style>';
+			jQuery('head').append(prev);
+		} );
+	} );
+	
+	wp.customize( 'metro-creativex_nav_color', function( value ) {
+		value.bind( function( to ) {
+			jQuery('#metro_creativex_nav_color').remove();
+			prev = '<style id="metro_creativex_nav_color">#topside .pages ul a { color: '+to+' !important; }</style>';
+			jQuery('head').append(prev);
+		} );
+	} );
+	
+	wp.customize( 'metro-creativex_nav_color_hover', function( value ) {
+		value.bind( function( to ) {
+			jQuery('#metro_creativex_nav_color_hover').remove();
+			prev = '<style id="metro_creativex_nav_color_hover">#topside .pages ul a:hover { color: '+to+' !important; }</style>';
+			jQuery('head').append(prev);
+		} );
+	} );
+	
+	wp.customize( 'metro-creativex_sidebar_title_color', function( value ) {
+		value.bind( function( to ) {
+			jQuery('#metro_creativex_title_color').remove();
+			prev = '<style id="metro_creativex_title_color">.widget-title { color: '+to+' !important; }</style>';
+			jQuery('head').append(prev);
+		} );
+	} );
 	
 	
+	
+	
+
+
+
 } )( jQuery );
