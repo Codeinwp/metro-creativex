@@ -479,7 +479,7 @@ function metro_creativex_page() {
 			</div>
 			<h1><?php _e('Get unlimited customization possibilities','metro-creativex'); ?></h1>
 			<p><?php _e('Fonts, colors, layout, everything is customizable. Super easy, super fast!','metro-creativex');?></p>
-			<a href=""><?php _e('Get Metro CustomizR now!','metro-creativex');?></a>
+			<a href="http://themeisle.com/plugins/metro-customizr/"><?php _e('Get Metro CustomizR now!','metro-creativex');?></a>
 		</div>
 	</div>
 	<div class="metro-customizr-presentation">
