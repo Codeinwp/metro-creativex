@@ -1,1 +1,33 @@
-= Metro CreativeX =Contributors: codeinwp.comTags: gray, dark, white, black, purple, red, green, yellow, blue, two-columns,responsive-layout, fluid-layout, custom-menu, custom-header, custom-background, editor-style, featured-images, threaded-comments, translation-ready, post-formatsRequires at least:	3.3.0Tested up to:		4.0Metro CreativeX== Description ==Metro CreativeX is a free metro WordPress theme, super clean and fully responsive design. Coded with care in HTML5 &amp; CSS3, is easy to customize and well documented.<a href="http://themeisle.com/forums/forum/metrox/">Official support forum</a> (http://themeisle.com/forums/forum/metrox/)= License =Metro CreativeX  theme, Copyright (C) 2013 codeinwp.comMetro CreativeX  theme is licensed under the GPL3.Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License v3.The exceptions to this license are as follows:jquery.carouFredSel-6.1.0.jsLicense: Dual licensed under the MIT and GPL licenses.Copyright: Copyright (c) 2012 Fred Heusschen - www.frebsite.nlIcons:License:  GNU General Public License v3Copyright:  2014 www.themeisle.comImages from screenshot are from https://unsplash.com/ distributed under GNU General Public License v3
+= Metro CreativeX =
+Contributors: codeinwp.com
+Tags: gray, dark, white, black, purple, red, green, yellow, blue, two-columns,responsive-layout, fluid-layout, custom-menu, custom-header, custom-background, editor-style, featured-images, threaded-comments, translation-ready, post-formats
+Requires at least:	3.3.0
+Tested up to:		4.0
+Metro CreativeX
+== Description ==
+Metro CreativeX is a free metro WordPress theme, super clean and fully responsive design. Coded with care in HTML5 &amp; CSS3, is easy to customize and well documented.<a href="http://themeisle.com/forums/forum/metrox/">Official support forum</a> (http://themeisle.com/forums/forum/metrox/)
+= License =
+
+Metro CreativeX  theme, Copyright (C) 2013 codeinwp.com
+Metro CreativeX  theme is licensed under the GPL3.
+
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License v3.
+The exceptions to this license are as follows:
+
+
+jquery.carouFredSel-6.1.0.js
+License: Dual licensed under the MIT and GPL licenses.
+Copyright: Copyright (c) 2012 Fred Heusschen - www.frebsite.nl
+
+Icons:
+License:  GNU General Public License v3
+Copyright:  2014 www.themeisle.com
+
+Images from screenshot are from https://unsplash.com/ distributed under GNU General Public License v3.
+
+Images from Metro CustomizR page are from https://pixabay.com/ distributed under CC0 Public Domain.
+
+metro-cretivex/individual.png : https://pixabay.com/en/seychelles-flag-fingerprint-country-662481/
+metro-cretivex/document.png : https://pixabay.com/en/document-layout-template-design-24951/
+metro-cretivex/fonts.jpg : https://pixabay.com/en/word-cloud-words-tag-cloud-679936/
+metro-cretivex/palette.png : https://pixabay.com/en/palette-circle-round-wheel-colour-42290/
