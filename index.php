@@ -14,7 +14,7 @@ get_header(); ?>
         <?php endif; ?>
 		</div><!--/topside-->
 		<?php
-			do_action('metro_customizr_show_title');
+			do_action('metro_creativex_show_title');
 		?>
 		
 		<div id="content">
@@ -28,5 +28,5 @@ get_header(); ?>
 				<?php get_template_part( 'content', 'none' ); ?>
 			<?php endif; ?>
 		</div><!-- /content -->
-		<?php do_action('metro_customizr_right_sidebar');?>
+		<?php do_action('metro_creativex_right_sidebar');?>
 <?php get_footer(); ?>

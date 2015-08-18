@@ -10,7 +10,7 @@ get_header(); ?>
 		?>
 		</div><!--/topside-->
 		<?php
-			do_action('metro_customizr_archive_title');
+			do_action('metro_creativex_archive_title');
 		?>
 		<div id="content">
 			<?php if ( have_posts() ) : ?>
@@ -23,5 +23,5 @@ get_header(); ?>
 				<?php get_template_part( 'content', 'none' ); ?>
 			<?php endif; ?>
 		</div><!-- /content -->
-		<?php do_action('metro_customizr_right_sidebar');?>
+		<?php do_action('metro_creativex_right_sidebar');?>
 <?php get_footer(); ?>

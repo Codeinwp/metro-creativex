@@ -12,7 +12,7 @@ get_header(); ?>
 			?>
 		</div><!--/topside-->
 		<?php
-			do_action('metro_customizr_single_header');
+			do_action('metro_creativex_single_header');
 		?>
 		<div id="content">
 			<div <?php post_class(); ?>>
@@ -40,5 +40,5 @@ get_header(); ?>
 			<?php comments_template(); ?>
 		</div><!-- /content -->
 	<?php endwhile; ?>
-	<?php do_action('metro_customizr_right_sidebar');?>
+	<?php do_action('metro_creativex_right_sidebar');?>
 <?php get_footer(); ?>

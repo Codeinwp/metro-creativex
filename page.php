@@ -8,7 +8,7 @@ get_header(); ?>
 		<?php do_action('page_title','metro_creativex_page_title');?>
 		</div><!--/topside-->
 		<?php
-			do_action('metro_customizr_page_title');
+			do_action('metro_creativex_page_title');
 		?>
 		<div id="content">
 			<div class="post">
@@ -21,6 +21,6 @@ get_header(); ?>
 			<?php metro_creativex_pagination(); ?>
 			<?php comments_template(); ?>
 		</div><!-- /content -->
-		<?php do_action('metro_customizr_right_sidebar');?>
+		<?php do_action('metro_creativex_right_sidebar');?>
 	<?php endwhile; ?>
 <?php get_footer(); ?>
