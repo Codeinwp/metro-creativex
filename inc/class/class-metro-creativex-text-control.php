@@ -11,7 +11,7 @@ class Metro_Creativex_Message extends WP_Customize_Control{
     
     public function render_content(){
         echo '<span class="customize-control-title">'.$this->label.'</span>';
-        echo __($this->message,'metro-creativex');
+        echo $this->message;
     }
 
 } 
