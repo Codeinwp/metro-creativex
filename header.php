@@ -81,7 +81,7 @@
 				?>
 			</div><!-- /logo -->
 			<div class="openmenuresp"><?php _e('Menu','metro-creativex'); ?></div>
-			<nav class ="metro_customizr_on_mobile">
+			<nav class ="metro_creaivex_on_mobile">
 			<?php
 			  $metro_creativex_terms = get_categories();
 			  if ($metro_creativex_terms) {

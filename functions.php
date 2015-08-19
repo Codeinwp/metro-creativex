@@ -464,13 +464,13 @@ add_action( 'admin_enqueue_scripts', 'metro_creativex_admin_styles', 10 );
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if(!is_plugin_active( 'metro-customizr/metro-customizr.php' )){
-	add_action('admin_menu', 'metro_customizr_menu');
+	add_action('admin_menu', 'metro_creativex_menu');
 }
-function metro_customizr_menu() {
-	add_theme_page('Metro CustomizR', 'Metro CustomizR', 'edit_theme_options', 'metro-customizr-page', 'metro_customizr_page');
+function metro_creativex_menu() {
+	add_theme_page('Metro CustomizR', 'Metro CustomizR', 'edit_theme_options', 'metro-customizr-page', 'metro_creativex_page');
 }
 
-function metro_customizr_page() {
+function metro_creativex_page() {
 ?>
 	<div class="metro-customizr-jumbotron">
 		<div class="container">
@@ -479,7 +479,7 @@ function metro_customizr_page() {
 			</div>
 			<h1><?php _e('Get unlimited customization possibilities','metro-creativex'); ?></h1>
 			<p><?php _e('Fonts, colors, layout, everything is customizable. Super easy, super fast!','metro-creativex');?></p>
-			<a href=""><?php _e('Get Metro CustomizR now!','metro-creativex');?></a>
+			<a href="http://themeisle.com/plugins/metro-customizr/"><?php _e('Get Metro CustomizR now!','metro-creativex');?></a>
 		</div>
 	</div>
 	<div class="metro-customizr-presentation">
@@ -521,8 +521,8 @@ function metro_customizr_page() {
 <?php
 }
 
-add_action('single_header','display_single_header');
-function display_single_header(){
+add_action('single_header','metro_creativex_display_single_header');
+function metro_creativex_display_single_header(){
 ?>
 	<h1 class="insidepost" style="background-image:url(
 	<?php 
@@ -553,8 +553,8 @@ function display_single_header(){
 <?php
 }
 
-add_action('archive_title','display_archive_title');
-function display_archive_title(){
+add_action('archive_title','metro_creativex_display_archive_title');
+function metro_creativex_display_archive_title(){
 ?>
 	<h1>
 		<?php

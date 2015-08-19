@@ -6,7 +6,7 @@
  */
 	$post_id = get_the_ID();
 ?>
-			<article <?php post_class(); do_action('metro_customizr_post_background',$post_id);?>>
+			<article <?php post_class(); do_action('metro_creativex_post_background',$post_id);?>>
 				<?php 
 					$metro_creativex_posttitle = get_the_title();
 					$metro_creativex_feat_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
