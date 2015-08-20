@@ -22,6 +22,15 @@ function metro_creativex_setup() {
 	// Add theme support for Featured Images
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
+	
+	/*
+     * Let WordPress manage the document title.
+     * By adding theme support, we declare that this theme does not use a
+     * hard-coded <title> tag in the document head, and expect WordPress to
+     * provide it for us.
+     */
+	add_theme_support( 'title-tag' );
+	
     /**
      * Enable support for Post Formats
      */
@@ -29,10 +38,7 @@ function metro_creativex_setup() {
 
     add_editor_style( '/css/custom-editor-style.css' );
 	/* custom background */
-	$args = array(
-	  'default-color' => '000000'
-	);
-	add_theme_support( 'custom-background', $args );
+	add_theme_support( 'custom-background' );
 
     require get_template_directory() . '/inc/customizer.php';
     /* tgm-plugin-activation */
@@ -207,25 +213,25 @@ function metro_creativex_register_required_plugins()
 
             'oops' => __('Something went wrong with the plugin API.', 'metro-creativex'),
 
-            'notice_can_install_required' => _n_noop('This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.'),
+            'notice_can_install_required' => _n_noop('This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'metro-creativex'),
 
-            'notice_can_install_recommended' => _n_noop('This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.'),
+            'notice_can_install_recommended' => _n_noop('This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'metro-creativex'),
 
-            'notice_cannot_install' => _n_noop('Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.'),
+            'notice_cannot_install' => _n_noop('Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'metro-creativex'),
 
-            'notice_can_activate_required' => _n_noop('The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.'),
+            'notice_can_activate_required' => _n_noop('The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'metro-creativex'),
 
-            'notice_can_activate_recommended' => _n_noop('The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.'),
+            'notice_can_activate_recommended' => _n_noop('The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'metro-creativex'),
 
-            'notice_cannot_activate' => _n_noop('Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.'),
+            'notice_cannot_activate' => _n_noop('Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'metro-creativex'),
 
-            'notice_ask_to_update' => _n_noop('The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.'),
+            'notice_ask_to_update' => _n_noop('The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'metro-creativex'),
 
-            'notice_cannot_update' => _n_noop('Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.'),
+            'notice_cannot_update' => _n_noop('Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'metro-creativex'),
 
-            'install_link' => _n_noop('Begin installing plugin', 'Begin installing plugins'),
+            'install_link' => _n_noop('Begin installing plugin', 'Begin installing plugins', 'metro-creativex'),
 
-            'activate_link' => _n_noop('Begin activating plugin', 'Begin activating plugins'),
+            'activate_link' => _n_noop('Begin activating plugin', 'Begin activating plugins', 'metro-creativex'),
 
             'return' => __('Return to Required Plugins Installer', 'metro-creativex'),
 
@@ -390,3 +396,190 @@ function metro_creativex_php_style() {
 	echo '</style>';
 	
 }
+
+
+add_action( 'metro-creativex_sidebar', 'metro_creativex_sidebar_display', 10 );
+function metro_creativex_sidebar_display(){
+?>
+	<div class="fix-height"></div>
+	
+	<nav>
+		<?php
+		  $metro_creativex_terms = get_categories();
+		  if ($metro_creativex_terms) {
+			foreach( $metro_creativex_terms as $metro_creativex_term ) {
+				$metro_creativex_post_nr = $metro_creativex_term->count;
+				if ( $metro_creativex_post_nr == "1" )
+					$metro_creativex_post_nr_display = "article";
+				else {
+					$metro_creativex_post_nr_display = 'articles';
+				}
+			  echo '
+				<a href="' . get_category_link( $metro_creativex_term->term_id ) . '" class="color-code" title="' . $metro_creativex_term->name.'">
+					' .'<span>'. $metro_creativex_term->name.'</span>'.'
+					<div class="read bg-code">
+						<p>'.$metro_creativex_post_nr.'</p><span>'.$metro_creativex_post_nr_display.'</span>
+					</div>
+				</a>';
+				}
+		  }
+		?>
+	</nav>
+	
+	<div class="left-sidebar sidebar-desktop">
+		<?php get_sidebar(); ?>
+	</div>		
+<?php
+	 do_action('metro_creativex_social');
+}
+
+add_action('show_title','metro_creativex_blog_title');
+function metro_creativex_blog_title(){
+	echo '<h1>';
+		_e('Latest articles','metro-creativex');
+	echo '</h1>';
+}
+
+
+add_action('page_title','metro_creativex_page_title');
+function metro_creativex_page_title(){
+	echo '<h1 class="insidepost">';
+		the_title();
+	echo '</h1>';
+}
+
+add_action('metro_creativex_social','metro_creativex_social_display');
+function metro_creativex_social_display(){
+	$metro_creativex_fb_link = get_theme_mod( 'metro-creativex_social_link_fb' );
+	$metro_creativex_tw_link = get_theme_mod( 'metro-creativex_social_link_tw' );
+	echo '<div id="social">';
+	if(!empty($metro_creativex_fb_link) || !empty($metro_creativex_tw_link)){
+			if ( !empty($metro_creativex_fb_link) ) :
+            	echo '<a href="'.esc_url($metro_creativex_fb_link).'"><img src="'. get_template_directory_uri().'/images/facebook.png" alt=""></a>';
+             endif;
+	        if ( !empty($metro_creativex_tw_link) ) :
+				echo '<a href="'.esc_url(  $metro_creativex_tw_link ).'"><img src="'.get_template_directory_uri().'/images/twitter.png" alt=""></a>';
+            endif;
+	}
+	echo '</div>';
+}
+
+
+function metro_creativex_admin_styles() {
+	wp_enqueue_style( 'metro_creativex_admin_stylesheet', get_template_directory_uri().'/css/admin-style.css','1.0.0' );
+}
+add_action( 'admin_enqueue_scripts', 'metro_creativex_admin_styles', 10 );
+
+
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if(!is_plugin_active( 'metro-customizr/metro-customizr.php' )){
+	add_action('admin_menu', 'metro_creativex_menu');
+}
+function metro_creativex_menu() {
+	add_theme_page('Metro CustomizR', 'Metro CustomizR', 'edit_theme_options', 'metro-customizr-page', 'metro_creativex_page');
+}
+
+function metro_creativex_page() {
+?>
+	<div class="metro-customizr-jumbotron">
+		<div class="container">
+			<div class="metro-customizr-logo">
+				<a href="http://themeisle.com/"><img src="<?php echo get_template_directory_uri().'/images/th_logo.png'?>"/></a>
+			</div>
+			<h1><?php _e('Get unlimited customization possibilities','metro-creativex'); ?></h1>
+			<p><?php _e('Fonts, colors, layout, everything is customizable. Super easy, super fast!','metro-creativex');?></p>
+			<a href="http://themeisle.com/plugins/metro-customizr/"><?php _e('Get Metro CustomizR now!','metro-creativex');?></a>
+		</div>
+	</div>
+	<div class="metro-customizr-presentation">
+		<div class="container">
+			<h1><?php _e('What You Will Get','metro-creativex'); ?></h1>
+			<article>
+				<p>
+					<?php
+						_e('Metro CustomizR is an addon plugin for Metro CreativeX that allows you to customize your theme the way you want. No more child themes or support needed. Just install it and you\'re ready to customize your website. Easy peasy!','metro-creativex');
+					?>
+				</p>
+			</article>
+			<div class="metro-customizr-left-col">
+				<div class="metro-customizr-box">
+					<img src="<?php echo get_template_directory_uri().'/images/palette.png'?>"/>
+					<h3><?php _e('Palette picker','metro-creativex');?></h3>
+					<p><?php _e('Change your page colors in just a few clicks with our palette picker control.','metro-creativex'); ?></p>
+				</div>
+				<div class="metro-customizr-box">
+					<img src="<?php echo get_template_directory_uri().'/images/individual.png'?>"/>
+					<h3><?php _e('Individual post color','metro-creativex');?></h3>
+					<p><?php _e('No more child theme required.Customize each post background color.','metro-creativex'); ?></p>
+				</div>
+			</div>
+			<div class="metro-customizr-right-col">
+				<div class="metro-customizr-box">
+					<img src="<?php echo get_template_directory_uri().'/images/document.png'?>"/>
+					<h3><?php _e('Website layout','metro-creativex');?></h3>
+					<p><?php _e('With just one click you can change the sidebar position.','metro-creativex'); ?></p>
+				</div>
+				<div class="metro-customizr-box">
+					<img src="<?php echo get_template_directory_uri().'/images/fonts.jpg'?>"/>
+					<h3><?php _e('Fonts','metro-creativex');?></h3>
+					<p><?php _e('Choose from over 100 fonts to style your page.','metro-creativex'); ?></p>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php
+}
+
+add_action('single_header','metro_creativex_display_single_header');
+function metro_creativex_display_single_header(){
+?>
+	<h1 class="insidepost" style="background-image:url(
+	<?php 
+	$metro_creativex_template_url = get_template_directory_uri();
+	if (has_post_format( 'aside' )) {
+		echo $metro_creativex_template_url.'/images/pt_aside.png';
+	} elseif (has_post_format( 'audio' )) {
+		echo $metro_creativex_template_url.'/images/pt_audio.png';
+	} elseif (has_post_format( 'chat' )) {
+		echo $metro_creativex_template_url.'/images/pt_chat.png';
+	} elseif (has_post_format( 'gallery' )) {
+		echo $metro_creativex_template_url.'/images/pt_gallery.png';
+	} elseif (has_post_format( 'image' )) {
+		echo $metro_creativex_template_url.'/images/pt_image.png';
+	} elseif (has_post_format( 'link' )) {
+		echo $metro_creativex_template_url.'/images/pt_link.png';
+	} elseif (has_post_format( 'quote' )) {
+		echo $metro_creativex_template_url.'/images/pt_quote.png';
+	} elseif (has_post_format( 'status' )) {
+		echo $metro_creativex_template_url.'/images/pt_status.png';
+	} elseif (has_post_format( 'video' )) {
+		echo $metro_creativex_template_url.'/images/pt_video.png';
+	} else {
+		echo $metro_creativex_template_url.'/images/pt_standard.png';
+	}
+	?>);"><?php the_title(); ?></h1>
+	<div class="insidepost_date"><?php echo get_the_date(); ?> - <?php the_category(', ') ?></div>		
+<?php
+}
+
+add_action('archive_title','metro_creativex_display_archive_title');
+function metro_creativex_display_archive_title(){
+?>
+	<h1>
+		<?php
+			if ( is_day() ) :
+				printf( __( 'Daily Archives: %s', 'metro-creativex' ), get_the_date() );
+			elseif ( is_month() ) :
+				printf( __( 'Monthly Archives: %s', 'metro-creativex' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'metro-creativex' ) ) );
+			elseif ( is_year() ) :
+				printf( __( 'Yearly Archives: %s', 'metro-creativex' ), get_the_date( _x( 'Y', 'yearly archives date format', 'metro-creativex' ) ) );
+			else :
+				single_cat_title();
+			endif;
+		?>
+	</h1>
+<?php
+}
+
+
+
