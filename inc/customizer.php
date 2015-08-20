@@ -32,7 +32,7 @@ function metro_creativex_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'metro_creativex_theme_notes' , array(
 		'title'      => __('ThemeIsle theme notes','metro-creativex'),
 		'description' => sprintf( __( "Thank you for being part of this! We've spent almost 6 months building ThemeIsle without really knowing if anyone will ever use a theme or not, so we're very grateful that you've decided to work with us. Wanna <a href='http://themeisle.com/contact/' target='_blank'>say hi</a>?
-		<br/><br/><a href='http://themeisle.com/demo/?theme=MetroX' target='_blank' />View Theme Demo</a> | <a href='https://themeisle.com/forums/forum/metrox/' target='_blank'>Get theme support</a>","metro-creativex")),
+		<br/><br/><a href='http://themeisle.com/demo/?theme=MetroX' target='_blank'>View Theme Demo</a> | <a href='https://themeisle.com/forums/forum/metrox/' target='_blank'>Get theme support</a>","metro-creativex")),
 		'priority'   => 30,
 	));
 	$wp_customize->add_setting(
