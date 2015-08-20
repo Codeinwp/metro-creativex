@@ -32,7 +32,7 @@ function metro_creativex_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'metro_creativex_theme_notes' , array(
 		'title'      => __('ThemeIsle theme notes','metro-creativex'),
 		'description' => sprintf( __( "Thank you for being part of this! We've spent almost 6 months building ThemeIsle without really knowing if anyone will ever use a theme or not, so we're very grateful that you've decided to work with us. Wanna <a href='http://themeisle.com/contact/' target='_blank'>say hi</a>?
-		<br/><br/><a href='http://themeisle.com/demo/?theme=MetroX' target='_blank' />View Theme Demo</a> | <a href='https://themeisle.com/forums/forum/metrox/' target='_blank'>Get theme support</a>","metro-creativex")),
+		<br/><br/><a href='http://themeisle.com/demo/?theme=MetroX' target='_blank'>View Theme Demo</a> | <a href='https://themeisle.com/forums/forum/metrox/' target='_blank'>Get theme support</a>","metro-creativex")),
 		'priority'   => 30,
 	));
 	$wp_customize->add_setting(
@@ -77,8 +77,9 @@ function metro_creativex_customize_register( $wp_customize ) {
 		array(
 			'label'    => __( 'Font', 'metro-creativex' ),
 			'section' => 'metro_creativex_general_section',
-			'priority' => 1
-	   ),__('Choose the font that suits your page.<br/>Font picker is available in <a href="'.esc_url(get_admin_url()).'/themes.php?page=metro-customizr-page" target="_blank" >Metro CustomizR</a>','metro-creativex')
+			'priority' => 1,
+			'metro_message' => sprintf( wp_kses( __( 'Choose the font that suits your page.<br/>Font picker is available in <a href="%s" target="_blank">Metro CustomizR</a>.', 'metro-creativex' ), array(  'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( get_admin_url().'/themes.php?page=metro-customizr-page' ) )
+	   )
 	));
 	
 	$wp_customize->add_setting( 'metro-creativex_layout_msg', array(
@@ -89,8 +90,9 @@ function metro_creativex_customize_register( $wp_customize ) {
 		array(
 			'label'    => __( 'Sidebar position', 'metro-creativex' ),
 			'section' => 'metro_creativex_general_section',
-			'priority' => 1
-	   ),__('Change the sidebar position.<br/>Sidebar position is available in <a href="'.esc_url(get_admin_url()).'/themes.php?page=metro-customizr-page" target="_blank" >Metro CustomizR</a>','metro-creativex')
+			'priority' => 1,
+			'metro_message' => sprintf( wp_kses( __( 'Change the sidebar position.<br/>Sidebar position is available in <a href="%s" target="_blank">Metro CustomizR</a>.', 'metro-creativex' ), array(  'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( get_admin_url().'/themes.php?page=metro-customizr-page' ) )
+	   )
 	));
 	
 	/* Socials */
@@ -107,8 +109,9 @@ function metro_creativex_customize_register( $wp_customize ) {
 		array(
 			'label'    => __( 'Add new social icon', 'metro-creativex' ),
 			'section' => 'metro_creativex_socials_section',
-			'priority' => 1
-	   ),__('More icons?<br/>Icon repeater is available in <a href="'.esc_url(get_admin_url()).'/themes.php?page=metro-customizr-page" target="_blank" >Metro CustomizR</a>','metro-creativex')
+			'priority' => 1,
+			'metro_message' => sprintf( wp_kses( __( 'More icons?<br/>Icon repeater is available in <a href="%s" target="_blank">Metro CustomizR</a>.', 'metro-creativex' ), array(  'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( get_admin_url().'/themes.php?page=metro-customizr-page' ) )
+	   )
 	));
 	
 	$wp_customize->add_setting( 'metro-creativex_social_link_fb', array('sanitize_callback' => 'esc_url_raw') );
@@ -135,8 +138,9 @@ function metro_creativex_customize_register( $wp_customize ) {
 	    array(
 	    	'label'    => __( 'Change the color scheme', 'metro-creativex' ),
 	        'section' => 'colors',
-			'priority' => 1
-	   ),__('Change all colors with just two clicks.<br/>Pallete picker is available in <a href="'.esc_url(get_admin_url()).'/themes.php?page=metro-customizr-page" target="_blank" >Metro CustomizR</a>','metro-creativex')
+			'priority' => 1,
+			'metro_message' => sprintf( wp_kses( __( 'Change all colors with just two clicks.<br/>Pallete picker is available in <a href="%s" target="_blank">Metro CustomizR</a>.', 'metro-creativex' ), array(  'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( get_admin_url().'/themes.php?page=metro-customizr-page' ) )
+	   )
 	));
 	
 	$wp_customize->add_setting( 'metro-creativex_text_color', array(
