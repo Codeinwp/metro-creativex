@@ -23,11 +23,12 @@ Icons:
 License:  GNU General Public License v3
 Copyright:  2014 www.themeisle.com
 
-Images from screenshot are from https://unsplash.com/ distributed under GNU General Public License v3.
+Images from screenshot and from Metro CustomizR page are from https://unsplash.com/ distributed under GNU General Public License v3.
+
+The image from Metro CustomizR page is from https://unsplash.com/photos/M0HwJ4j58-w/ distributed under GNU General Public License v3.
 
 Images from Metro CustomizR page are from https://pixabay.com/ distributed under CC0 Public Domain.
-
-metro-cretivex/individual.png : https://pixabay.com/en/seychelles-flag-fingerprint-country-662481/
-metro-cretivex/document.png : https://pixabay.com/en/document-layout-template-design-24951/
-metro-cretivex/fonts.jpg : https://pixabay.com/en/word-cloud-words-tag-cloud-679936/
-metro-cretivex/palette.png : https://pixabay.com/en/palette-circle-round-wheel-colour-42290/
+images/individual.png : https://pixabay.com/en/seychelles-flag-fingerprint-country-662481/
+images/document.png : https://pixabay.com/en/document-layout-template-design-24951/
+images/fonts.jpg : https://pixabay.com/en/word-cloud-words-tag-cloud-679936/
+images/palette.png : https://pixabay.com/en/palette-circle-round-wheel-colour-42290/
