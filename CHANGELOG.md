@@ -1,5 +1,36 @@
 
 
+### 1.3.4 - 20/08/2015
+
+ Changes: 
+
+
+ * Update class-tgm-plugin-activation to latest version
+ * Update style.css
+ * added action hook for socials
+ * plugin compatibility
+ * added compatibility with customizer plugin
+ * fixed metro customizr presentation page
+ * added transport postmessage to logo
+ * added transport post message for colors
+ * Merge pull request #30 from cristian-ungureanu/development
+
+Development
+ * #31 - Added image license
+ * #31 - change functions prefix
+ * change hook names back
+ * add plugin link to metro customizr page
+ * Merge pull request #32 from cristian-ungureanu/development
+
+Development
+ * this fixes #34 - view theme button
+ * #33 - fix theme check errors
+ * #31 - added licence to customizr_logo.jpg and change links to images
+ * Merge pull request #35 from cristian-ungureanu/development
+
+Development
+
+
 ### 1.3.3 - 01/07/2015
 
  Changes: 
