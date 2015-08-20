@@ -11,7 +11,7 @@
 					$metro_creativex_posttitle = get_the_title();
 					$metro_creativex_feat_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 					if(isset($metro_creativex_feat_image[0])):
-						echo '<div class="img"><img src='.$metro_creativex_feat_image[0].' alt="'.$metro_creativex_posttitle.'"></div>';
+						echo '<div class="img">'.get_the_post_thumbnail().'</div>';
 					endif;	
 				?>
 				<div class="post_icon" style="background-image:url(<?php echo get_template_directory_uri(); ?>/images/pt_standard.png);"></div>
