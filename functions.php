@@ -400,9 +400,7 @@ function metro_creativex_php_style() {
 
 add_action( 'metro-creativex_sidebar', 'metro_creativex_sidebar_display', 10 );
 function metro_creativex_sidebar_display(){
-?>
-	<div class="fix-height"></div>
-	
+?>	
 	<nav>
 		<?php
 		  $metro_creativex_terms = get_categories();

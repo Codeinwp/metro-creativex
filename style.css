@@ -102,10 +102,11 @@ header nav a,
 	border-bottom: 1px solid #141414;
 	overflow: hidden;
 }
-.fix-height{
-	height: 40px;
-	width: 100%;
+
+#logo{
+	padding-bottom: 40px;
 }
+
 header nav a {
 	display: table;
 	overflow: hidden;
