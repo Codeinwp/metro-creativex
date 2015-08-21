@@ -1,5 +1,17 @@
 
 
+### 1.3.4 - 21/08/2015
+
+ Changes: 
+
+
+ * #36 - added space between logo and nav
+ * #36 - remove double menu
+ * Merge pull request #38 from cristian-ungureanu/development
+
+Development
+
+
 ### 1.3.4 - 20/08/2015
 
  Changes: 
