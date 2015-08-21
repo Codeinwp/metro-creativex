@@ -81,28 +81,9 @@
 				?>
 			</div><!-- /logo -->
 			<div class="openmenuresp"><?php _e('Menu','metro-creativex'); ?></div>
-			<nav class ="metro_creaivex_on_mobile">
 			<?php
-			  $metro_creativex_terms = get_categories();
-			  if ($metro_creativex_terms) {
-				foreach( $metro_creativex_terms as $metro_creativex_term ) {
-					$metro_creativex_post_nr = $metro_creativex_term->count;
-					if ( $metro_creativex_post_nr == "1" )
-						$metro_creativex_post_nr_display = "article";
-					else {
-						$metro_creativex_post_nr_display = 'articles';
-					}
-				  echo '
-					<a href="' . get_category_link( $metro_creativex_term->term_id ) . '" class="color-code" title="' . $metro_creativex_term->name.'">
-						' .'<span>'. $metro_creativex_term->name.'</span>'.'
-						<div class="read bg-code">
-							<p>'.$metro_creativex_post_nr.'</p><span>'.$metro_creativex_post_nr_display.'</span>
-						</div>
-					</a>';
-					}
-			  }
+				do_action('metro-creaivex_on_mobile');
 			?>
-			</nav>
 			<div class="navrespgradient"></div>
 			<?php
 				do_action('metro-creativex_sidebar');
