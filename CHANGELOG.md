@@ -1,5 +1,13 @@
 
 
+### 1.3.5 - 08/09/2015
+
+ Changes: 
+
+
+ * Updated pot file with latest articles
+
+
 ### 1.3.4 - 21/08/2015
 
  Changes: 
