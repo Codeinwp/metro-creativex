@@ -88,6 +88,7 @@ header nav {
 	border-bottom: 1px solid #353535;
 	border-top: 1px solid #141414;
 	font-family: 'Open Sans', sans-serif;
+	overflow: hidden;
 }
 header nav ul,
 header nav li { list-style: none !important; }
