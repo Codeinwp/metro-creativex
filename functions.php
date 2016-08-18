@@ -121,8 +121,7 @@ function metro_creativex_theme_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	if ( !is_single() and !is_page() ) {
-        wp_enqueue_script( 'jquery-masonry');
-		wp_enqueue_script( 'metro_creativex_masonry', get_template_directory_uri() . '/js/metrox-masonry.js', array('jquery'), '1.0', true );
+		wp_enqueue_script( 'metro_creativex_masonry', get_template_directory_uri() . '/js/metrox-masonry.js', array('jquery', 'masonry'), '1.0', true );
     }
 
 }
