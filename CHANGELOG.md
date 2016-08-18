@@ -1,4 +1,8 @@
 
+### 1.3.8 - 18/08/2016
+**Changes:** 
+- Fixed theme requirements issues
+
 ### 1.3.7 - 18/08/2016
 **Changes:** 
 - Fixed masonry issue with WordPress 4.6
