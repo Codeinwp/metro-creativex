@@ -163,9 +163,9 @@ function metro_creativex_register_required_plugins()
 
         array(
  
-            'name'      => 'Custom Login customizer',
+            'name'      => 'Nivo Slider Lite',
  
-            'slug'      => 'login-customizer',
+            'slug'      => 'nivo-slider-lite',
  
             'required'  => false,
  
