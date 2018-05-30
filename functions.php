@@ -163,9 +163,9 @@ function metro_creativex_register_required_plugins()
 
         array(
  
-            'name'      => 'Custom Login customizer',
+            'name'      => 'Orbit Fox',
  
-            'slug'      => 'login-customizer',
+            'slug'      => 'themeisle-companion',
  
             'required'  => false,
  
@@ -173,7 +173,7 @@ function metro_creativex_register_required_plugins()
 
         array(
  
-            'name'      => 'Revive Old Post (Former Tweet Old Post)',
+            'name'      => 'Revive Old Posts',
  
             'slug'      => 'tweet-old-post',
  
