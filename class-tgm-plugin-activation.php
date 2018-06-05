@@ -958,7 +958,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				if ( is_wp_error( $activate ) ) {
 					echo '<div id="message" class="error"><p>', wp_kses_post( $activate->get_error_message() ), '</p></div>',
-						'<p><a href="', esc_url( $this->get_tgmpa_url() ), '" target="_parent">', esc_html( $this->strings['return'] ), '</a></p>';
+					'<p><a href="', esc_url( $this->get_tgmpa_url() ), '" target="_parent">', esc_html( $this->strings['return'] ), '</a></p>';
 
 					return false; // End it here if there is an error with activation.
 				} else {
@@ -977,22 +977,22 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				// No simpler message format provided as this message should never be encountered
 				// on the plugin install page.
 				echo '<div id="message" class="error"><p>',
-					sprintf(
-						esc_html( $this->strings['plugin_already_active'] ),
-						'<strong>' . esc_html( $this->plugins[ $slug ]['name'] ) . '</strong>'
-					),
-					'</p></div>';
+				sprintf(
+					esc_html( $this->strings['plugin_already_active'] ),
+					'<strong>' . esc_html( $this->plugins[ $slug ]['name'] ) . '</strong>'
+				),
+				'</p></div>';
 			} elseif ( $this->does_plugin_require_update( $slug ) ) {
 				if ( ! $automatic ) {
 					// Make sure message doesn't display again if bulk activation is performed
 					// immediately after a single activation.
 					if ( ! isset( $_POST['action'] ) ) { // WPCS: CSRF OK.
 						echo '<div id="message" class="error"><p>',
-							sprintf(
-								esc_html( $this->strings['plugin_needs_higher_version'] ),
-								'<strong>' . esc_html( $this->plugins[ $slug ]['name'] ) . '</strong>'
-							),
-							'</p></div>';
+						sprintf(
+							esc_html( $this->strings['plugin_needs_higher_version'] ),
+							'<strong>' . esc_html( $this->plugins[ $slug ]['name'] ) . '</strong>'
+						),
+						'</p></div>';
 					}
 				} else {
 					// Simpler message layout for use on the plugin install page.
@@ -1166,7 +1166,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			);
 
 			$link_template = '<a href="%2$s">%1$s</a>';
-
+      
 			if ( current_user_can( 'install_plugins' ) ) {
 				if ( $install_count > 0 ) {
 					$action_links['install'] = sprintf(
