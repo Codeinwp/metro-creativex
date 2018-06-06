@@ -1,4 +1,8 @@
 
+ ### v1.4.1 - 2018-06-06 
+ **Changes:** 
+ * Compatibility with Orbit Fox plugin
+ 
 ### 1.3.8 - 18/08/2016
 **Changes:** 
 - Fixed theme requirements issues
