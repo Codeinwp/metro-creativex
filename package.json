@@ -1,0 +1,31 @@
+{
+  "name": "metro-creativex",
+  "nicename": "metro-creativex",
+  "version": "1.4.1",
+  "description": "metro-creativex theme",
+  "category": "themes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codeinwp/metro-creativex.git"
+  },
+  "keywords": [
+    "wordpress-theme"
+  ],
+  "theme": {
+    "textdomain": "metro-creativex"
+  },
+  "author": "ThemeIsle <friends@themeisle.com>",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/Codeinwp/metro-creativex/issues"
+  },
+  "pot": {
+    "reportmsgidbugsto": "https://github.com/Codeinwp/metro-creativex/issues",
+    "languageteam": "Themeisle Translate <friends@themeisle.com>",
+    "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
+  },
+  "devDependencies": {
+    "grunt-theme-fleet": "codeinwp/grunt-theme-fleet",
+    "load-project-config": "~0.2.0"
+  }
+}
