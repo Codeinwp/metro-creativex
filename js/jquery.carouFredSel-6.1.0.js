@@ -1,3 +1,4 @@
+// jshint ignore: start
 /*
  *	jQuery carouFredSel 6.1.0
  *	Demo's and documentation:
